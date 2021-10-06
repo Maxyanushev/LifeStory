@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class SocialViewModel extends ViewModel {
+
     private MutableLiveData<String> mText;
 
     public SocialViewModel() {

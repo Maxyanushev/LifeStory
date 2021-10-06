@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_profile">
+
+    <fragment
+        android:id="@+id/nav_music"
+        android:name="com.example.nana.ui.music.MusicFragment"
+        android:label="@string/menu_music"
+        tools:layout="@layout/fragment_music" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.nana.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_games"
+        android:name="com.example.nana.ui.game.GameFragment"
+        android:label="@string/menu_games"
+        tools:layout="@layout/fragment_game" />
+
+    <fragment
+        android:id="@+id/nav_another"
+        android:name="com.example.nana.ui.another.AnotherFragment"
+        android:label="Другое"
+        tools:layout="@layout/fragment_another" />
+    <fragment
+        android:id="@+id/nav_developer"
+        android:name="com.example.nana.ui.developer.DeveloperFragment"
+        android:label="Вопросы и предложения разработчикам"
+        tools:layout="@layout/fragment_developer" />
+    <fragment
+        android:id="@+id/nav_anime"
+        android:name="com.example.nana.ui.anime.AnimeFragment"
+        android:label="Аниме"
+        tools:layout="@layout/fragment_anime" />
+    <fragment
+        android:id="@+id/nav_programming"
+        android:name="com.example.nana.ui.programming.ProgrammingFragment"
+        android:label="Программирование и Софт"
+        tools:layout="@layout/fragment_programming" />
+    <fragment
+        android:id="@+id/nav_rave"
+        android:name="com.example.nana.ui.rave.RaveFragment"
+        android:label="Бред"
+        tools:layout="@layout/fragment_rave" />
+    <fragment
+        android:id="@+id/nav_social"
+        android:name="com.example.nana.ui.social.SocialFragment"
+        android:label="Общение и знакомства"
+        tools:layout="@layout/fragment_social" />
+    <fragment
+        android:id="@+id/nav_studies"
+        android:name="com.example.nana.ui.studies.StudiesFragment"
+        android:label="Учёба"
+        tools:layout="@layout/fragment_studies" />
+</navigation>

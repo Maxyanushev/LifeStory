@@ -1,0 +1,36 @@
+<resources>
+
+    /* app_file
+    System string files
+    DO NOT TOUCH!!!
+    */
+
+    <string name="app_name">Nana</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    /* activity_main_drawer.xml
+    Post Topic Tab Titles
+    Key symbol "menu_"
+    */
+
+    <string name="menu_rave">Бред</string>
+    <string name="menu_anime">Аниме</string>
+    <string name="menu_profile">Профиль</string>
+    <string name="menu_music">Музыка</string>
+    <string name="menu_games">Игры</string>
+    <string name="menu_programming">Программирование</string>
+    <string name="menu_studies">Учёба</string>
+    <string name="menu_social">Общение и знакомства</string>
+    <string name="nav_question">Вопросы и предложения</string>
+    <string name="menu_another">Другое</string>
+    <string name="settings">Настройки</string>
+
+    /*
+
+    */
+</resources>

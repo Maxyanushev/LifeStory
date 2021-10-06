@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class StudiesViewModel extends ViewModel {
+
     private MutableLiveData<String> mText;
 
     public StudiesViewModel() {

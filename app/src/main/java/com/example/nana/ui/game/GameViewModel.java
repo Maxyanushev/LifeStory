@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class GameViewModel extends ViewModel {
-
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText;
 
     public GameViewModel() {
         mText = new MutableLiveData<>();

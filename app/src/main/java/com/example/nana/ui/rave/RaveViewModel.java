@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class RaveViewModel extends ViewModel {
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText;
 
     public RaveViewModel() {
         mText = new MutableLiveData<>();

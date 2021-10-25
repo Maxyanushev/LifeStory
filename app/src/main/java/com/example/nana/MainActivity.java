@@ -1,14 +1,15 @@
 package com.example.nana;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
-import com.example.nana.serviсes.BackgroundMusicService;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.nana.publication.PublicationFragment;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -31,23 +32,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Тут будет добавление обсуждения!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        binding.appBarMain.fab.setOnClickListener(view -> newPublication());
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_music, R.id.nav_games, R.id.nav_another, R.id.nav_developer, R.id.nav_rave, R.id.nav_social, R.id.nav_anime, R.id.nav_studies, R.id.nav_programming).setOpenableLayout(drawer).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_music, R.id.nav_games, R.id.nav_rave, R.id.nav_anime, R.id.nav_studies, R.id.nav_social, R.id.nav_another, R.id.nav_programming, R.id.nav_developer, R.id.nav_publication).setOpenableLayout(drawer).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
 
-        startService(new Intent(this, BackgroundMusicService.class));
+    private void newPublication() {
+        Fragment fragment = new PublicationFragment();
+        binding.appBarMain.fab.setVisibility(View.GONE);
+
+        FragmentManager fragmentPublicationManager = getSupportFragmentManager();
+        FragmentTransaction fragmentPublicationTransaction = fragmentPublicationManager.beginTransaction();
+        fragmentPublicationTransaction.replace(R.id.nav_host_fragment_content_main, fragment);
+        fragmentPublicationTransaction.commit();
     }
 
     @Override
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        binding.appBarMain.fab.setVisibility(View.VISIBLE);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

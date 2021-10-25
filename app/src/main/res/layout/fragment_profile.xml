@@ -2,11 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayoutProfile"
+    android:background="@drawable/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.profile.ProfileFragment" >
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -43,7 +41,8 @@
                         android:src="@drawable/ic_launcher_background"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/todo" />
 
                     <TextView
                         android:id="@+id/text_gallery"
@@ -69,15 +68,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="@string/settings"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded" />
 
             <androidx.constraintlayout.widget.Group
                 android:id="@+id/item_number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:tooltipText="@string/settings"
-                app:constraint_referenced_ids="" />
+                app:constraint_referenced_ids=""
+                tools:targetApi="o" />
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

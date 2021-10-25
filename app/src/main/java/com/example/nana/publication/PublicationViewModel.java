@@ -1,15 +1,15 @@
-package com.example.nana.ui.programming;
+package com.example.nana.publication;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ProgrammingViewModel extends ViewModel {
+public class PublicationViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
-    public ProgrammingViewModel() {
+    public PublicationViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is programming fragment");
+        mText.setValue("This is publication fragment");
     }
 
     public LiveData<String> getText() {

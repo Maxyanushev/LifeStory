@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(viewLayout);
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(view -> newPublication());
+//        binding.appBarMain.fab.setOnClickListener(view -> newPublication());
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;

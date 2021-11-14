@@ -15,13 +15,12 @@ import com.example.nana.databinding.FragmentPublicationBinding;
 
 public class PublicationFragment extends Fragment {
 
-    private FragmentPublicationBinding binding;
-//    public ActivityMainBinding binding2;
+    public FragmentPublicationBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         PublicationViewModel publicationViewModel = new ViewModelProvider(this).get(PublicationViewModel.class);
 
-        binding = FragmentPublicationBinding.inflate(inflater, container, false);
+        binding = FragmentPublicationBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
 
         final TextView textView = binding.textPublication;
@@ -32,7 +31,6 @@ public class PublicationFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-//        binding2.appBarMain.fab.setVisibility(View.VISIBLE);
         binding = null;
     }
 }

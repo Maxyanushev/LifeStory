@@ -44,8 +44,14 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    /*
-
+    /* fragment_publication.xml
+    "Strings" who used in PublicationFragment
     */
+
+    <string name="crossed_text"> <strike> N </strike> </string>
+    <string name="title_create_text">Создать запись</string>
+    <string name="preview_text_publication">Введите тему обсуждения</string>
+    <string name="preview_text2_publication">Опишите свою проблему; Задайте вопрос или что-то расскажите</string>
+    <string name="example">Пример</string>
 
 </resources>

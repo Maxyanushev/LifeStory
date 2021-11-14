@@ -9,7 +9,7 @@ public class PublicationViewModel extends ViewModel {
 
     public PublicationViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is publication fragment");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(viewLayout);
 
         setSupportActionBar(binding.appBarMain.toolbar);
-//        binding.appBarMain.fab.setOnClickListener(view -> newPublication());
+        binding.appBarMain.fab.setOnClickListener(view -> newPublication());
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -45,15 +45,15 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-//    private void newPublication() {
-//        Fragment fragment = new PublicationFragment();
-//        binding.appBarMain.fab.setVisibility(View.GONE);
-//
-//        FragmentManager fragmentPublicationManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentPublicationTransaction = fragmentPublicationManager.beginTransaction();
-//        fragmentPublicationTransaction.replace(R.id.nav_host_fragment_content_main, fragment);
-//        fragmentPublicationTransaction.commit();
-//    }
+    private void newPublication() {
+        Fragment fragment = new PublicationFragment();
+        binding.appBarMain.fab.setVisibility(View.GONE);
+
+        FragmentManager fragmentPublicationManager = getSupportFragmentManager();
+        FragmentTransaction fragmentPublicationTransaction = fragmentPublicationManager.beginTransaction();
+        fragmentPublicationTransaction.replace(R.id.nav_host_fragment_content_main, fragment);
+        fragmentPublicationTransaction.commit();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

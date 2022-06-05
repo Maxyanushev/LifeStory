@@ -6,30 +6,51 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/background.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/button_text.xml" value="0.309375" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/help.xml" value="0.290625" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_help_publication.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_launcher_background.xml" value="0.309375" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_menu_anime.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_menu_programming.xml" value="0.309375" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_publication_help.xml" value="0.309375" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_system_help.xml" value="0.290625" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/roundedbutton.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/side_nav_bar.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-v26/fragment_profile.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1884203480589023" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.21618852459016394" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_detail_publication.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_documentation.xml" value="0.2866847826086957" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_issue.xml" value="0.25" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_main.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_main_publication.xml" value="0.2866847826086957" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_publication.xml" value="0.3708759954493743" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_scrolling.xml" value="0.25" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/app_bar_main.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/content_issue.xml" value="0.26721014492753625" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/content_main.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/content_main2.xml" value="0.2545289855072464" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/content_scrolling.xml" value="0.2866847826086957" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_anime.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_another.xml" value="0.27943840579710144" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_create_publication.xml" value="0.15677083333333333" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_developer.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_documentation.xml" value="0.15677083333333333" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_game.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_issue_main.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_music.xml" value="0.27943840579710144" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_profile.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_programming.xml" value="0.2545289855072464" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_publication.xml" value="0.33" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_rave.xml" value="0.14375" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_scrolling.xml" value="0.2866847826086957" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_social.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_studies.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/nav_header_main.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/menu/activity_main_drawer.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/menu/main.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/menu/menu_scrolling.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/Nana2/app/src/main/res/drawable/ic_menu_communication.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/Nana2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/Nana2/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
@@ -50,6 +71,7 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/Nana2/app/src/main/res/menu/activity_main_drawer.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/Nana2/app/src/main/res/menu/main.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/Nana2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.25" />
+        <entry key="..\:/Users/Max/AppData/Local/Android/Sdk/platforms/android-30/data/res/drawable/btn_plus.xml" value="0.290625" />
       </map>
     </option>
   </component>

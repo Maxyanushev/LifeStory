@@ -1,28 +1,29 @@
 package com.example.nana;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.preference.PreferenceManager;
 import android.view.Menu;
+import android.view.View;
 
-import com.example.nana.publication.PublicationFragment;
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nana.databinding.ActivityMainBinding;
+import com.example.nana.publication.DetailPublicationActivity;
+import com.example.nana.publication.PublicationActivity;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private int countOfEnter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(viewLayout);
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(view -> newPublication());
+        binding.appBarMain.fab.setOnClickListener(view -> newDetailPost());
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -45,14 +46,20 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    private void newPublication() {
-        Fragment fragment = new PublicationFragment();
-        binding.appBarMain.fab.setVisibility(View.GONE);
-
-        FragmentManager fragmentPublicationManager = getSupportFragmentManager();
-        FragmentTransaction fragmentPublicationTransaction = fragmentPublicationManager.beginTransaction();
-        fragmentPublicationTransaction.replace(R.id.nav_host_fragment_content_main, fragment);
-        fragmentPublicationTransaction.commit();
+    private void newDetailPost() {
+        SharedPreferences wmbPreference = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
+        Intent intent;
+        if (isFirstRun) {
+            // Code to run once
+            intent = new Intent(this, DetailPublicationActivity.class);
+        } else {
+            intent = new Intent(this, PublicationActivity.class);
+        }
+        startActivity(intent);
+        SharedPreferences.Editor editor = wmbPreference.edit();
+        editor.putBoolean("FIRSTRUN", false);
+        editor.apply();
     }
 
     @Override

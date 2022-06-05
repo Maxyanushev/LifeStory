@@ -58,4 +58,9 @@
         android:name="com.example.nana.ui.studies.StudiesFragment"
         android:label="Учёба"
         tools:layout="@layout/fragment_studies" />
+    <fragment
+        android:id="@+id/issue_main"
+        android:name="com.example.nana.publication.IssueMainFragment"
+        android:label="Обсуждение"
+        tools:layout="@layout/fragment_studies" />
 </navigation>

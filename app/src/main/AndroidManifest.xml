@@ -5,18 +5,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Nana"
+        android:theme="@style/Theme.Nana.NoActionBar"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".publication.PublicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".publication.DetailPublicationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.Nana.NoActionBar.NoActionBar" />
+        <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Nana.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,4 +31,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

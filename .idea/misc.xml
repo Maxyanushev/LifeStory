@@ -16,6 +16,8 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_system_help.xml" value="0.290625" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/roundedbutton.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/side_nav_bar.xml" value="0.309375" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/thumb.xml" value="0.2385" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/track.xml" value="0.2385" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-v26/fragment_profile.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1884203480589023" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.21618852459016394" />
@@ -46,7 +48,7 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_scrolling.xml" value="0.2866847826086957" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_social.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_studies.xml" value="0.2753623188405797" />
-        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/nav_header_main.xml" value="0.2753623188405797" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/nav_header_main.xml" value="0.4" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/menu/activity_main_drawer.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/menu/main.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/menu/menu_scrolling.xml" value="0.27447916666666666" />

@@ -24,6 +24,12 @@
     <!-- Other Strings -->
     <string name="online_status_off">Online Status: Off</string>
     <string name="online_status_on">Online Status: On</string>
+    <string name="reputation">Reputation</string>
+    <string name="nana_coins">Nana-Coins</string>
+
+    <!-- Numbers -->
+    <string name="one_hundred" translatable="false">100</string>
+    <string name="ten_thousand" translatable="false">10 000</string>
 
     <!-- Test Text -->
     <string name="large_text">

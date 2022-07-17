@@ -16,6 +16,8 @@
     <!-- Other Strings -->
     <string name="online_status_off">Онлайн Статус: Викл</string>
     <string name="online_status_on">Онлайн Статус: Вкл</string>
+    <string name="reputation">Репутація</string>
+    <string name="nana_coins">Nana-Монет</string>
 
     <!-- Test Text -->
     <string name="large_text">

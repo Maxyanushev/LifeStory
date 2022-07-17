@@ -62,22 +62,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/settings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:text="@string/settings"
-                android:textSize="20sp"
-                tools:ignore="RtlHardcoded" />
-
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/item_number"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:tooltipText="@string/settings"
-                app:constraint_referenced_ids=""
-                tools:targetApi="o" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

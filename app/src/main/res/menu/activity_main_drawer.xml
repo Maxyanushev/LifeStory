@@ -9,40 +9,28 @@
             android:icon="@drawable/ic_menu_profile"
             android:title="@string/menu_profile" />
         <item
-            android:id="@+id/nav_music"
-            android:icon="@drawable/ic_menu_music"
-            android:title="@string/menu_music" />
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_menu_history"
+            android:title="@string/menu_history" />
         <item
-            android:id="@+id/nav_games"
-            android:icon="@drawable/ic_menu_game"
-            android:title="@string/menu_games" />
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_menu_news"
+            android:title="@string/menu_news" />
         <item
-            android:id="@+id/nav_rave"
-            android:icon="@drawable/ic_menu_rave"
-            android:title="@string/menu_rave" />
+            android:id="@+id/nav_top_up"
+            android:icon="@drawable/ic_menu_top_up"
+            android:title="@string/menu_top_up" />
         <item
-            android:id="@+id/nav_anime"
-            android:icon="@drawable/ic_menu_anime"
-            android:title="@string/menu_anime" />
+            android:id="@+id/nav_support"
+            android:icon="@drawable/ic_menu_support"
+            android:title="@string/menu_support" />
         <item
-            android:id="@+id/nav_programming"
-            android:icon="@drawable/ic_menu_programming"
-            android:title="@string/menu_programming" />
+            android:id="@+id/nav_instruction"
+            android:icon="@drawable/ic_menu_instruction"
+            android:title="@string/menu_instruction" />
         <item
-            android:id="@+id/nav_studies"
-            android:icon="@drawable/ic_menu_studies"
-            android:title="@string/menu_studies" />
-        <item
-            android:id="@+id/nav_social"
-            android:icon="@drawable/ic_menu_social"
-            android:title="@string/menu_social" />
-        <item
-            android:id="@+id/nav_another"
-            android:icon="@drawable/ic_menu_communication"
-            android:title="@string/menu_another" />
-        <item
-            android:id="@+id/nav_developer"
-            android:icon="@drawable/ic_menu_question"
-            android:title="@string/nav_question" />
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/menu_settings" />
     </group>
 </menu>

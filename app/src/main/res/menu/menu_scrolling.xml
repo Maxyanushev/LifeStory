@@ -2,9 +2,5 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.nana.publication.DetailPublicationActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/settings"
-        app:showAsAction="never" />
+
 </menu>

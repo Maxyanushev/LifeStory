@@ -1,16 +1,23 @@
 <resources>
-    <string name="menu_rave">Бред</string>
-    <string name="menu_anime">Аниме</string>
-    <string name="menu_profile">Профиль</string>
-    <string name="menu_music">Музыка</string>
-    <string name="menu_games">Игры</string>
-    <string name="menu_programming">Программирование</string>
-    <string name="menu_studies">Учёба</string>
-    <string name="menu_social">Общение и знакомства</string>
-    <string name="nav_question">Вопросы и предложения</string>
-    <string name="menu_another">Другое</string>
-    <string name="settings">Настройки</string>
 
+    <!-- Menu Elements -->
+    <string name="menu_profile">Профиль</string>
+    <string name="menu_history">История</string>
+    <string name="menu_news">Новости</string>
+    <string name="menu_top_up">Пополнение счёта</string>
+    <string name="menu_support">Поддержка</string>
+    <string name="menu_instruction">Инструкция</string>
+    <string name="menu_settings">Настройки</string>
+
+    <!-- Channel Names -->
+    <string name="channel_music">Музыка</string>
+    <string name="channel_games">Игры</string>
+
+    <!-- Other Strings -->
+    <string name="online_status_off">Онлайн Статус: Выкл</string>
+    <string name="online_status_on">Онлайн Статус: Вкл</string>
+
+    <!-- Test Text -->
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -100,9 +107,4 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="title_activity_main_publication">MainPublicationActivity</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
-
-    <string name="online_status_off">Онлайн Статус: Выкл</string>
-    <string name="online_status_on">Онлайн Статус: Вкл</string>
 </resources>

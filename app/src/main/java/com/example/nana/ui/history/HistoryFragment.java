@@ -1,4 +1,4 @@
-package com.example.nana.ui.social;
+package com.example.nana.ui.history;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.nana.databinding.FragmentSocialBinding;
+import com.example.nana.databinding.FragmentHistoryBinding;
 
-public class SocialFragment extends Fragment {
+public class HistoryFragment extends Fragment {
 
-    private FragmentSocialBinding binding;
+    private FragmentHistoryBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        SocialViewModel socialViewModel = new ViewModelProvider(this).get(SocialViewModel.class);
+        HistoryViewModel historyViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
 
-        binding = FragmentSocialBinding.inflate(inflater, container, false);
+        binding = FragmentHistoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSocial;
-        socialViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textHistory;
+        historyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

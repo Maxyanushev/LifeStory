@@ -12,14 +12,13 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_history">History</string>
     <string name="menu_news">News</string>
-    <string name="menu_top_up">Top Up</string>
+    <string name="menu_replenishment">Replenishment</string>
     <string name="menu_support">Support</string>
     <string name="menu_instruction">Instruction</string>
     <string name="menu_settings">Settings</string>
 
     <!-- Channel Names -->
-    <string name="channel_music">Music</string>
-    <string name="channel_games">Games</string>
+
 
     <!-- Other Strings -->
     <string name="online_status_off">Online Status: Off</string>
@@ -102,8 +101,8 @@
         "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
         "changes are consistently implemented using dynamic elevation offsets.\n"
         "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
-        "to the component’s resting state. They ensure that elevation changes are consistent "
         "across actions and component types. For example, all components that lift on press have "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
         "the same elevation change relative to their resting elevation.\n"
         "Once the input event is completed or cancelled, the component will return to its resting "
         "elevation.\n\n"

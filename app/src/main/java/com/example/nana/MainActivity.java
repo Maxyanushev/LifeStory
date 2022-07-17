@@ -52,10 +52,9 @@ public class MainActivity extends AppCompatActivity {
         drawer = binding.drawerLayout;
         navigationView = binding.navView;
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_music, R.id.nav_games,
-                R.id.nav_rave, R.id.nav_anime, R.id.nav_studies,
-                R.id.nav_social, R.id.nav_another, R.id.nav_programming,
-                R.id.nav_developer).setOpenableLayout(drawer).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_history, R.id.nav_news,
+                R.id.nav_replenishment, R.id.nav_support, R.id.nav_instruction,
+                R.id.nav_settings).setOpenableLayout(drawer).build();
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);

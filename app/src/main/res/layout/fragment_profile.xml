@@ -43,7 +43,7 @@
                         android:contentDescription="@string/todo" />
 
                     <TextView
-                        android:id="@+id/text_gallery"
+                        android:id="@+id/textProfile"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"

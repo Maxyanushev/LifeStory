@@ -17,9 +17,9 @@
             android:icon="@drawable/ic_menu_news"
             android:title="@string/menu_news" />
         <item
-            android:id="@+id/nav_top_up"
-            android:icon="@drawable/ic_menu_top_up"
-            android:title="@string/menu_top_up" />
+            android:id="@+id/nav_replenishment"
+            android:icon="@drawable/ic_menu_replenishment"
+            android:title="@string/menu_replenishment" />
         <item
             android:id="@+id/nav_support"
             android:icon="@drawable/ic_menu_support"

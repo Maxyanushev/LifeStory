@@ -1,15 +1,15 @@
-package com.example.nana.ui.developer;
+package com.example.nana.ui.replenishment;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DeveloperViewModel extends ViewModel {
+public class ReplenishmentViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
-    public DeveloperViewModel() {
+    public ReplenishmentViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is developer fragment");
+        mText.setValue("It`s replenishment fragment");
     }
 
     public LiveData<String> getText() {

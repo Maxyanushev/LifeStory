@@ -1,4 +1,4 @@
-package com.example.nana.ui.developer;
+package com.example.nana.ui.support;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.nana.databinding.FragmentDeveloperBinding;
+import com.example.nana.databinding.FragmentSupportBinding;
 
-public class DeveloperFragment extends Fragment {
+public class SupportFragment extends Fragment {
 
-    private FragmentDeveloperBinding binding;
+    private FragmentSupportBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        DeveloperViewModel developerViewModel = new ViewModelProvider(this).get(DeveloperViewModel.class);
+        SupportViewModel supportViewModel = new ViewModelProvider(this).get(SupportViewModel.class);
 
-        binding = FragmentDeveloperBinding.inflate(inflater, container, false);
+        binding = FragmentSupportBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDeveloper;
-        developerViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textSupport;
+        supportViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

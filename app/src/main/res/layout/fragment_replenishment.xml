@@ -5,12 +5,14 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textRave"
-        android:layout_width="wrap_content"
+        android:id="@+id/textReplenishment"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

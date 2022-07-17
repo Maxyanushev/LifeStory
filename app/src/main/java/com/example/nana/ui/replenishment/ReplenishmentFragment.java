@@ -1,4 +1,4 @@
-package com.example.nana.ui.another;
+package com.example.nana.ui.replenishment;
 
 import android.os.Bundle;
 
@@ -11,20 +11,20 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.nana.databinding.FragmentAnotherBinding;
+import com.example.nana.databinding.FragmentReplenishmentBinding;
 
-public class AnotherFragment extends Fragment {
+public class ReplenishmentFragment extends Fragment {
 
-    private FragmentAnotherBinding binding;
+    private FragmentReplenishmentBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        AnotherViewModel anotherViewModel = new ViewModelProvider(this).get(AnotherViewModel.class);
+        ReplenishmentViewModel replenishmentViewModel = new ViewModelProvider(this).get(ReplenishmentViewModel.class);
 
-        binding = FragmentAnotherBinding.inflate(inflater, container, false);
+        binding = FragmentReplenishmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textAnother;
-        anotherViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textReplenishment;
+        replenishmentViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

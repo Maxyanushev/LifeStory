@@ -1,4 +1,4 @@
-package com.example.nana.ui.anime;
+package com.example.nana.ui.settings;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.nana.databinding.FragmentAnimeBinding;
+import com.example.nana.databinding.FragmentSettingsBinding;
 
-public class AnimeFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
-    private FragmentAnimeBinding binding;
+    private FragmentSettingsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        AnimeViewModel animeViewModel = new ViewModelProvider(this).get(AnimeViewModel.class);
+        SettingsViewModel settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
 
-        binding = FragmentAnimeBinding.inflate(inflater, container, false);
+        binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textAnime;
-        animeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textSettings;
+        settingsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

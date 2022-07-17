@@ -4,14 +4,13 @@
     <string name="menu_profile">Профиль</string>
     <string name="menu_history">История</string>
     <string name="menu_news">Новости</string>
-    <string name="menu_top_up">Пополнение счёта</string>
+    <string name="menu_replenishment">Пополнение счёта</string>
     <string name="menu_support">Поддержка</string>
     <string name="menu_instruction">Инструкция</string>
     <string name="menu_settings">Настройки</string>
 
     <!-- Channel Names -->
-    <string name="channel_music">Музыка</string>
-    <string name="channel_games">Игры</string>
+
 
     <!-- Other Strings -->
     <string name="online_status_off">Онлайн Статус: Выкл</string>

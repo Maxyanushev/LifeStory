@@ -6,56 +6,44 @@
     app:startDestination="@+id/nav_profile">
 
     <fragment
-        android:id="@+id/nav_music"
-        android:name="com.example.nana.ui.music.MusicFragment"
-        android:label="@string/channel_music"
-        tools:layout="@layout/fragment_music" />
-
-    <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.nana.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_games"
-        android:name="com.example.nana.ui.game.GameFragment"
-        android:label="@string/channel_games"
-        tools:layout="@layout/fragment_game" />
+        android:id="@+id/nav_history"
+        android:name="com.example.nana.ui.history.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/nav_another"
-        android:name="com.example.nana.ui.another.AnotherFragment"
-        android:label="Другое"
-        tools:layout="@layout/fragment_another" />
+        android:id="@+id/nav_news"
+        android:name="com.example.nana.ui.news.NewsFragment"
+        android:label="@string/menu_news"
+        tools:layout="@layout/fragment_news" />
+
     <fragment
-        android:id="@+id/nav_developer"
-        android:name="com.example.nana.ui.developer.DeveloperFragment"
-        android:label="Вопросы и предложения разработчикам"
-        tools:layout="@layout/fragment_developer" />
+        android:id="@+id/nav_replenishment"
+        android:name="com.example.nana.ui.replenishment.ReplenishmentFragment"
+        android:label="@string/menu_replenishment"
+        tools:layout="@layout/fragment_replenishment" />
+
     <fragment
-        android:id="@+id/nav_anime"
-        android:name="com.example.nana.ui.anime.AnimeFragment"
-        android:label="Аниме"
-        tools:layout="@layout/fragment_anime" />
+        android:id="@+id/nav_support"
+        android:name="com.example.nana.ui.support.SupportFragment"
+        android:label="@string/menu_support"
+        tools:layout="@layout/fragment_support" />
+
     <fragment
-        android:id="@+id/nav_programming"
-        android:name="com.example.nana.ui.programming.ProgrammingFragment"
-        android:label="Программирование и Софт"
-        tools:layout="@layout/fragment_programming" />
+        android:id="@+id/nav_instruction"
+        android:name="com.example.nana.ui.instruction.InstructionFragment"
+        android:label="@string/menu_instruction"
+        tools:layout="@layout/fragment_instruction" />
+
     <fragment
-        android:id="@+id/nav_rave"
-        android:name="com.example.nana.ui.rave.RaveFragment"
-        android:label="Бред"
-        tools:layout="@layout/fragment_rave" />
-    <fragment
-        android:id="@+id/nav_social"
-        android:name="com.example.nana.ui.social.SocialFragment"
-        android:label="Общение и знакомства"
-        tools:layout="@layout/fragment_social" />
-    <fragment
-        android:id="@+id/nav_studies"
-        android:name="com.example.nana.ui.studies.StudiesFragment"
-        android:label="Учёба"
-        tools:layout="@layout/fragment_studies" />
+        android:id="@+id/nav_settings"
+        android:name="com.example.nana.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

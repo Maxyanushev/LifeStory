@@ -1,4 +1,4 @@
-package com.example.nana.ui.music;
+package com.example.nana.ui.news;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.nana.databinding.FragmentMusicBinding;
+import com.example.nana.databinding.FragmentNewsBinding;
 
-public class MusicFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
-    private FragmentMusicBinding binding;
+    private FragmentNewsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        MusicViewModel musicViewModel = new ViewModelProvider(this).get(MusicViewModel.class);
+        NewsViewModel newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
 
-        binding = FragmentMusicBinding.inflate(inflater, container, false);
+        binding = FragmentNewsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textMusic;
-        musicViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textNews;
+        newsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

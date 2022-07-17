@@ -1,4 +1,4 @@
-package com.example.nana.ui.rave;
+package com.example.nana.ui.instruction;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.nana.databinding.FragmentRaveBinding;
+import com.example.nana.databinding.FragmentInstructionBinding;
 
-public class RaveFragment extends Fragment {
+public class InstructionFragment extends Fragment {
 
-    private FragmentRaveBinding binding;
+    private FragmentInstructionBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        RaveViewModel raveViewModel = new ViewModelProvider(this).get(RaveViewModel.class);
+        InstructionViewModel instructionViewModel = new ViewModelProvider(this).get(InstructionViewModel.class);
 
-        binding = FragmentRaveBinding.inflate(inflater, container, false);
+        binding = FragmentInstructionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textRave;
-        raveViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textInstruction;
+        instructionViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

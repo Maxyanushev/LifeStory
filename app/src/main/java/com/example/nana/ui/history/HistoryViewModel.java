@@ -1,15 +1,15 @@
-package com.example.nana.ui.another;
+package com.example.nana.ui.history;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AnotherViewModel extends ViewModel {
+public class HistoryViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
-    public AnotherViewModel() {
+    public HistoryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is another fragment");
+        mText.setValue("It`s history fragment");
     }
 
     public LiveData<String> getText() {

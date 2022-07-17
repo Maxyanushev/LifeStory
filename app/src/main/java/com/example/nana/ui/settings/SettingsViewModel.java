@@ -1,15 +1,15 @@
-package com.example.nana.ui.rave;
+package com.example.nana.ui.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class RaveViewModel extends ViewModel {
+public class SettingsViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
-    public RaveViewModel() {
+    public SettingsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is rave fragment");
+        mText.setValue("It`s settings fragment");
     }
 
     public LiveData<String> getText() {

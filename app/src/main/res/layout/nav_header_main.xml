@@ -19,26 +19,24 @@
 
     <TextView
         android:id="@+id/textView3"
+        style="@style/Widget.Nana.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:text="@string/ten_thousand"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"/>
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:srcCompat="@drawable/ic_reputation"
+        app:srcCompat="@drawable/karma"
         android:contentDescription="@string/todo" />
 
     <TextView
@@ -80,7 +78,7 @@
         android:id="@+id/online_status_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:elevation="10dp"
         android:text="@string/online_status_off"
         android:textColor="@color/white"
@@ -94,7 +92,6 @@
         android:id="@+id/image_avatar"
         android:layout_width="136dp"
         android:layout_height="192dp"
-        android:layout_marginTop="40dp"
         android:elevation="10dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,14 +126,12 @@
 
     <TextView
         android:id="@+id/coins_count"
+        style="@style/Widget.Nana.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:text="@string/one_hundred"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
@@ -154,10 +149,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
+        style="@style/Widget.Nana.TextView"
         android:layout_width="0dp"
         android:layout_height="216dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="20dp"

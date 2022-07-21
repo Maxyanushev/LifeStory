@@ -7,27 +7,26 @@
         android:name=".App"
         android:allowBackup="true"
         android:configChanges="keyboardHidden|orientation|screenSize|fontScale"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/ic_icon"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/icon"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Nana.NoActionBar"
+        android:theme="@style/Theme.Nana"
         tools:ignore="AllowBackup">
         <activity
             android:name=".publication.PublicationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/title_activity_main_publication"
+            android:theme="@style/Theme.Nana"/>
         <activity
             android:name=".publication.DetailPublicationActivity"
             android:exported="false"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.Nana.NoActionBar.NoActionBar" />
+            android:theme="@style/Theme.Nana" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,5 +34,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

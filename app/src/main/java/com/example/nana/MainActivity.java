@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initListeners() {
-        binding.appBarMain.fab.setOnClickListener(view -> newDetailPost());
+        binding.appBarMain.fab.setOnClickListener(v -> newDetailPost());
 
         onlineStatus.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {

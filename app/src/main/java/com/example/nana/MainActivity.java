@@ -27,13 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
-    private DrawerLayout drawer;
-    private NavigationView navigationView;
-    private NavController navController;
-
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch onlineStatus;
-    private View navHeader;
     private TextView onlineStatusText;
 
     @Override
@@ -49,18 +44,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        drawer = binding.drawerLayout;
-        navigationView = binding.navView;
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_history, R.id.nav_news,
                 R.id.nav_replenishment, R.id.nav_support, R.id.nav_instruction,
                 R.id.nav_settings).setOpenableLayout(drawer).build();
 
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        navHeader = navigationView.getHeaderView(0);
+        View navHeader = navigationView.getHeaderView(0);
         onlineStatus = navHeader.findViewById(R.id.online_status);
         onlineStatusText = navHeader.findViewById(R.id.online_status_text);
     }

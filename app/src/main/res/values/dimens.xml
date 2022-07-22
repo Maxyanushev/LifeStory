@@ -8,4 +8,8 @@
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="text_TitleToolbar">28sp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+    <dimen name="dimen_20">20dp</dimen>
+    <dimen name="dimen_20_text">20sp</dimen>
 </resources>

@@ -109,4 +109,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="enter_text">Введіть текст</string>
+    <string name="new_publication">Новая публикация</string>
+    <string name="next">Далее</string>
 </resources>

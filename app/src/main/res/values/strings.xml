@@ -19,6 +19,11 @@
 
     <!-- Channel Names -->
 
+    <!-- Text Types -->
+    <string name="n_strike" translatable="false"><strike>N</strike></string>
+    <string name="n_underlined" translatable="false"><u>N</u></string>
+    <string name="n_bold" translatable="false"><b>N</b></string>
+    <string name="n_italics" translatable="false"><i>N</i></string>
 
     <!-- Other Strings -->
     <string name="online_status_off">Online Status: Off</string>
@@ -125,5 +130,6 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
 
 </resources>

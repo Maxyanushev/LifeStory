@@ -30,4 +30,8 @@
         <item name="android:background">@color/transparent</item>
         <item name="srcCompat">@drawable/ic_help_white</item>
     </style>
+
+    <style name="Widget.Nana.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="android:background">@color/black</item>
+    </style>
 </resources>

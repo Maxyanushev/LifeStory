@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:srcCompat="@drawable/karma"
+        app:srcCompat="@drawable/ic_reputation"
         android:contentDescription="@string/todo" />
 
     <TextView

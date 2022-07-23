@@ -13,12 +13,11 @@
     <color name="blue">#00E1FF</color>
     <color name="grey">#808080</color>
     <color name="violet">#8a2be2</color>
+    <color name="green">#34c759</color>
 
     <!-- Color Shades -->
 
 
     <!-- Specific Colors -->
     <color name="transparent">#00000000</color>
-    <color name="green">#34c759</color>
-
 </resources>

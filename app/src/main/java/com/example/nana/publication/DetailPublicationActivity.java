@@ -12,14 +12,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DetailPublicationActivity extends AppCompatActivity {
 
-    private ActivityDetailPublicationBinding binding;
-    private FloatingActionButton fab;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityDetailPublicationBinding.inflate(getLayoutInflater());
+        com.example.nana.databinding.ActivityDetailPublicationBinding binding = ActivityDetailPublicationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         Toolbar toolbar = binding.toolbar;
@@ -27,7 +24,7 @@ public class DetailPublicationActivity extends AppCompatActivity {
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle("How to create a post?");
 
-        fab = binding.fab;
+        FloatingActionButton fab = binding.fab;
         fab.setOnClickListener(view -> newPublication());
     }
 

@@ -17,6 +17,11 @@
     <string name="online_status_on">Онлайн Статус: Вкл</string>
     <string name="reputation">Репутация</string>
     <string name="nana_coins">Nana-Монет</string>
+    <string name="enter_text">Введите текст</string>
+    <string name="new_publication">Новая Публикация</string>
+    <string name="next">Далее</string>
+    <string name="theme">Тема</string>
+    <string name="choose_channel">Выберете канал</string>
 
     <!-- Test Text -->
     <string name="large_text">
@@ -108,7 +113,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="enter_text">Введите текст</string>
-    <string name="new_publication">Новая публикация</string>
-    <string name="next">Далее</string>
+
 </resources>

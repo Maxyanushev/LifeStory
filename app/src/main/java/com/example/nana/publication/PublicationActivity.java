@@ -20,7 +20,8 @@ public class PublicationActivity extends AppCompatActivity {
     public void init() {
         ActivityPublicationBinding binding = ActivityPublicationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setSupportActionBar(binding.toolbar);
-        binding.toolbar.setTitle(R.string.new_publication);
+
+        binding.searchView.setIconified(false);
+        binding.searchView.onActionViewExpanded();
     }
 }

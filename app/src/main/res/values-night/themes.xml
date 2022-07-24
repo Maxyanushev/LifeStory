@@ -18,7 +18,6 @@
     <style name="Widget.Nana.TextView" parent="@style/Widget.AppCompat.TextView">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Widget.Nana.ImageView.Back" parent="@style/Widget.AppCompat.ImageButton">
@@ -29,6 +28,16 @@
     <style name="Widget.Nana.ImageView.Help" parent="@style/Widget.AppCompat.ImageButton">
         <item name="android:background">@color/transparent</item>
         <item name="srcCompat">@drawable/ic_help_white</item>
+    </style>
+
+    <style name="Widget.Nana.ImageView.Link" parent="@style/Widget.AppCompat.ImageButton">
+        <item name="android:background">@color/transparent</item>
+        <item name="srcCompat">@drawable/ic_link_white</item>
+    </style>
+
+    <style name="Widget.Nana.ImageView.Media" parent="@style/Widget.AppCompat.ImageButton">
+        <item name="android:background">@color/transparent</item>
+        <item name="srcCompat">@drawable/ic_media_white</item>
     </style>
 
     <style name="Widget.Nana.CardView" parent="Widget.MaterialComponents.CardView">

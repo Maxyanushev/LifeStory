@@ -11,20 +11,24 @@ import com.example.nana.databinding.ActivityPublicationBinding;
 
 public class PublicationActivity extends AppCompatActivity {
 
+    ActivityPublicationBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publication);
 
         init();
+        initListeners();
     }
 
     public void init() {
-        ActivityPublicationBinding binding = ActivityPublicationBinding.inflate(getLayoutInflater());
+        binding = ActivityPublicationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+    }
 
+    public void initListeners() {
         binding.btnBack.setOnClickListener(v -> onActivity("MainActivity"));
-
         binding.btnHelp.setOnClickListener(v -> onActivity("DetailPublicationActivity"));
     }
 

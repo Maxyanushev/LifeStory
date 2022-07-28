@@ -27,22 +27,22 @@
 
     <style name="Widget.Nana.ImageView.Back" parent="@style/Widget.AppCompat.ImageButton">
         <item name="android:background">@color/transparent</item>
-        <item name="srcCompat">@drawable/ic_back_black</item>
+        <item name="tint">@color/black</item>
     </style>
 
     <style name="Widget.Nana.ImageView.Help" parent="@style/Widget.AppCompat.ImageButton">
         <item name="android:background">@color/transparent</item>
-        <item name="srcCompat">@drawable/ic_help_black</item>
+        <item name="tint">@color/black</item>
     </style>
 
     <style name="Widget.Nana.ImageView.Link" parent="@style/Widget.AppCompat.ImageButton">
         <item name="android:background">@color/transparent</item>
-        <item name="srcCompat">@drawable/ic_link_black</item>
+        <item name="tint">@color/black</item>
     </style>
 
     <style name="Widget.Nana.ImageView.Media" parent="@style/Widget.AppCompat.ImageButton">
         <item name="android:background">@color/transparent</item>
-        <item name="srcCompat">@drawable/ic_media_black</item>
+        <item name="tint">@color/black</item>
     </style>
 
     <style name="Widget.Nana.CardView" parent="Widget.MaterialComponents.CardView">

@@ -23,6 +23,7 @@
     <string name="politics_channel">/pol/ - Politics</string>
     <string name="socially_channel">/soc/ - Socially</string>
     <string name="games_channel">/g/ - Games</string>
+    <string name="sport_channel">/sp/ - Sport</string>
 
     <!-- Text Types -->
     <string name="n_strike" translatable="false"><strike>N</strike></string>

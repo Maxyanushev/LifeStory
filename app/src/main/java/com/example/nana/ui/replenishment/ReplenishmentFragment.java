@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.nana.core.BaseFragment;
 import com.example.nana.databinding.FragmentReplenishmentBinding;
 
-public class ReplenishmentFragment extends Fragment {
+public class ReplenishmentFragment extends BaseFragment {
 
     private FragmentReplenishmentBinding binding;
 

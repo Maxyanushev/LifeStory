@@ -3,28 +3,42 @@ package com.example.nana.publication;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityDetailPublicationBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class DetailPublicationActivity extends AppCompatActivity {
+public class DetailPublicationActivity extends BaseActivity {
+
+    ActivityDetailPublicationBinding binding;
+
+    FloatingActionButton fab;
+    Toolbar toolbar;
+    CollapsingToolbarLayout toolBarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        com.example.nana.databinding.ActivityDetailPublicationBinding binding = ActivityDetailPublicationBinding.inflate(getLayoutInflater());
+        init();
+        initListeners();
+    }
+
+    public void init() {
+        binding = ActivityDetailPublicationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Toolbar toolbar = binding.toolbar;
+        toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle("How to create a post?");
 
-        FloatingActionButton fab = binding.fab;
+        fab = binding.fab;
+        toolBarLayout = binding.toolbarLayout;
+        toolBarLayout.setTitle("How to create a post?");
+    }
+
+    public void initListeners() {
         fab.setOnClickListener(view -> newPublication());
     }
 

@@ -10,22 +10,31 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityMainBinding;
 import com.example.nana.publication.DetailPublicationActivity;
 import com.example.nana.publication.PublicationActivity;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    public DrawerLayout drawer;
+    public NavigationView navigationView;
+    public NavController navController;
+
+    public View navHeader;
+
+    public SharedPreferences.Editor editor;
+    public SharedPreferences wmbPreference;
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch onlineStatus;
@@ -44,18 +53,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
+        drawer = binding.drawerLayout;
+        navigationView = binding.navView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_history, R.id.nav_news,
                 R.id.nav_replenishment, R.id.nav_support, R.id.nav_instruction,
                 R.id.nav_settings).setOpenableLayout(drawer).build();
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        View navHeader = navigationView.getHeaderView(0);
+        navHeader = navigationView.getHeaderView(0);
         onlineStatus = navHeader.findViewById(R.id.online_status);
         onlineStatusText = navHeader.findViewById(R.id.online_status_text);
     }
@@ -73,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void newDetailPost() {
-        SharedPreferences wmbPreference = PreferenceManager.getDefaultSharedPreferences(this);
+        wmbPreference = PreferenceManager.getDefaultSharedPreferences(this);
         boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
         Intent intent;
         if (isFirstRun) {
@@ -83,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             intent = new Intent(this, PublicationActivity.class);
         }
         startActivity(intent);
-        SharedPreferences.Editor editor = wmbPreference.edit();
+        editor = wmbPreference.edit();
         editor.putBoolean("FIRSTRUN", false);
         editor.apply();
     }
@@ -97,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

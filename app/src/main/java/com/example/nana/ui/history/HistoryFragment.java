@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.nana.core.BaseFragment;
 import com.example.nana.databinding.FragmentHistoryBinding;
 
-public class HistoryFragment extends Fragment {
+public class HistoryFragment extends BaseFragment {
 
     private FragmentHistoryBinding binding;
 

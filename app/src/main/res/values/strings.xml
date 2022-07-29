@@ -18,6 +18,11 @@
     <string name="menu_settings">Settings</string>
 
     <!-- Channel Names -->
+    <string name="anime_channel">/anim/ - Anime</string>
+    <string name="creation_channel">/cr/ - Creation</string>
+    <string name="politics_channel">/pol/ - Politics</string>
+    <string name="socially_channel">/soc/ - Socially</string>
+    <string name="games_channel">/g/ - Games</string>
 
     <!-- Text Types -->
     <string name="n_strike" translatable="false"><strike>N</strike></string>
@@ -26,15 +31,23 @@
     <string name="n_italics" translatable="false"><i>N</i></string>
 
     <!-- Other Strings -->
+    <!-- Main -->
+    <string name="version_draw_menu">Version 1.0.0</string>
+
+    <!-- App Strings -->
     <string name="online_status_off">Online Status: Off</string>
     <string name="online_status_on">Online Status: On</string>
+
     <string name="reputation">Reputation</string>
     <string name="nana_coins">Nana-Coins</string>
-    <string name="enter_text">Enter text</string>
+
     <string name="new_publication">New Publication</string>
+    <string name="choose_channel">Choose a channel</string>
+
+    <!-- Basic Words -->
     <string name="next">Next</string>
     <string name="theme">Theme</string>
-    <string name="choose_channel">Choose a channel</string>
+    <string name="enter_text">Enter text</string>
 
     <!-- Numbers -->
     <string name="one_hundred" translatable="false">100</string>
@@ -130,6 +143,4 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-
-
 </resources>

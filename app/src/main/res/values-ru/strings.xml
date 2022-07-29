@@ -10,18 +10,30 @@
     <string name="menu_settings">Настройки</string>
 
     <!-- Channel Names -->
-
+    <string name="anime_channel">/anim/ - Аниме</string>
+    <string name="creation_channel">/cr/ - Творчество</string>
+    <string name="politics_channel">/pol/ - Политика</string>
+    <string name="socially_channel">/soc/ - Общение и Знакомства</string>
+    <string name="games_channel">/g/ - Игры</string>
 
     <!-- Other Strings -->
+    <!-- Main -->
+    <string name="version_draw_menu">Версия 1.0.0</string>
+
+    <!-- App Strings -->
     <string name="online_status_off">Онлайн Статус: Выкл</string>
     <string name="online_status_on">Онлайн Статус: Вкл</string>
+
     <string name="reputation">Репутация</string>
     <string name="nana_coins">Nana-Монет</string>
-    <string name="enter_text">Введите текст</string>
+
+    <string name="choose_channel">Выберите канал</string>
     <string name="new_publication">Новая Публикация</string>
+
+    <!-- Basic Words -->
+    <string name="enter_text">Введите текст</string>
     <string name="next">Далее</string>
     <string name="theme">Тема</string>
-    <string name="choose_channel">Выберите канал</string>
 
     <!-- Test Text -->
     <string name="large_text">

@@ -31,10 +31,15 @@
     <string name="new_publication">Нова Публікація</string>
     <string name="choose_channel">Виберіть канал</string>
 
+    <string name="subscription">Підписки</string>
+    <string name="followers">Підписники</string>
+    <string name="posts">Пости</string>
+
     <!-- Basic Words -->
-    <string name="next">Next</string>
-    <string name="theme">Theme</string>
-    <string name="enter_text">Enter text</string>
+    <string name="next">Далі</string>
+    <string name="theme">Тема</string>
+    <string name="enter_text">Введіть текст</string>
+    <string name="edit_profile">Редагувати Профіль</string>
 
     <!-- Test Text -->
     <string name="large_text">
@@ -126,6 +131,4 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-
-
 </resources>

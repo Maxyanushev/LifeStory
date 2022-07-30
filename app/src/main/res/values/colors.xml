@@ -12,12 +12,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#00E1FF</color>
     <color name="grey">#808080</color>
-<!--    <color name="violet">#8a2be2</color>-->
     <color name="green">#34c759</color>
 
     <!-- Color Shades -->
-
+    <color name="black_161">#161D28</color>
+    <color name="pink_b92">#b92970</color>
 
     <!-- Specific Colors -->
     <color name="transparent">#00000000</color>
+
 </resources>

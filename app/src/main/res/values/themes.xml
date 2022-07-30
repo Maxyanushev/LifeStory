@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Nana" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/pink_b92</item>
+        <item name="colorPrimaryVariant">@color/pink_b92</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -46,7 +46,7 @@
     </style>
 
     <style name="Widget.Nana.CardView" parent="Widget.MaterialComponents.CardView">
-        <item name="android:background">@drawable/frame_green</item>
+        <item name="android:background">@drawable/frame_pink</item>
     </style>
 
     <style name="Theme.Nana.NoActionBar">

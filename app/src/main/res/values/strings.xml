@@ -149,4 +149,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="large_text_recycler" translatable="false">Hi everyone! Today, walking along the streets of Kharkov, I came across such a funny turtle not far from Shevchenko Park. Could not share with you, the Internet!</string>
+    <string name="empty_profile">Oops! \nLooks like it\'s empty!</string>
+    <string name="saved">Saved</string>
 </resources>

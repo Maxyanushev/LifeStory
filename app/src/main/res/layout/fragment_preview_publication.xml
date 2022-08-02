@@ -152,7 +152,5 @@
                 android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

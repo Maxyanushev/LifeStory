@@ -30,6 +30,10 @@ public class PublicationActivity extends AppCompatActivity {
     public void initListeners() {
         binding.btnBack.setOnClickListener(v -> onActivity("MainActivity"));
         binding.btnHelp.setOnClickListener(v -> onActivity("DetailPublicationActivity"));
+
+        binding.txtNext.setOnClickListener(v -> {
+
+        });
     }
 
     public void onActivity(String o) {

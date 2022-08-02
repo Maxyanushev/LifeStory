@@ -7,16 +7,25 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
-import com.example.nana.R;
 import com.example.nana.core.BaseFragment;
+import com.example.nana.databinding.FragmentPostsBinding;
 
 public class PostsFragment extends BaseFragment {
+
+    private FragmentPostsBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_posts, container, false);
+        binding = FragmentPostsBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.rvPosts.setVisibility(View.INVISIBLE);
     }
 }

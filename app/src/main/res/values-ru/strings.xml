@@ -1,48 +1,51 @@
 <resources>
-
     <!-- Menu Elements -->
-    <string name="menu_profile">Профиль</string>
-    <string name="menu_history">История</string>
-    <string name="menu_news">Новости</string>
-    <string name="menu_replenishment">Пополнение счёта</string>
-    <string name="menu_support">Поддержка</string>
-    <string name="menu_instruction">Инструкция</string>
-    <string name="menu_settings">Настройки</string>
+        <string name="menu_profile">Профиль</string>
+        <string name="menu_history">История</string>
+        <string name="menu_news">Новости</string>
+        <string name="menu_replenishment">Пополнение счёта</string>
+        <string name="menu_support">Поддержка</string>
+        <string name="menu_instruction">Инструкция</string>
+        <string name="menu_settings">Настройки</string>
 
     <!-- Channel Names -->
-    <string name="anime_channel">/anim/ - Аниме</string>
-    <string name="creation_channel">/cr/ - Творчество</string>
-    <string name="politics_channel">/pol/ - Политика</string>
-    <string name="socially_channel">/soc/ - Общение и Знакомства</string>
-    <string name="games_channel">/g/ - Игры</string>
-    <string name="sport_channel">/sp/ - Спорт</string>
+        <string name="anime_channel">/anim/ - Аниме</string>
+        <string name="creation_channel">/cr/ - Творчество</string>
+        <string name="politics_channel">/pol/ - Политика</string>
+        <string name="socially_channel">/soc/ - Общение и Знакомства</string>
+        <string name="games_channel">/g/ - Игры</string>
+        <string name="sport_channel">/sp/ - Спорт</string>
 
     <!-- Other Strings -->
-    <!-- Main -->
-    <string name="version_draw_menu">Версия 1.0.0</string>
+        <!-- Main -->
+            <string name="version_draw_menu">Версия 1.0.0</string>
 
-    <!-- App Strings -->
-    <string name="online_status_off">Онлайн Статус: Выкл</string>
-    <string name="online_status_on">Онлайн Статус: Вкл</string>
+        <!-- App Strings -->
+            <string name="online_status_off">Онлайн Статус: Выкл</string>
+            <string name="online_status_on">Онлайн Статус: Вкл</string>
 
-    <string name="reputation">Репутация</string>
-    <string name="nana_coins">Nana-Монет</string>
+            <string name="reputation">Репутация</string>
+            <string name="nana_coins">Nana-Монет</string>
 
-    <string name="choose_channel">Выберите канал</string>
-    <string name="new_publication">Новая Публикация</string>
+            <string name="choose_channel">Выберите канал</string>
+            <string name="new_publication">Новая Публикация</string>
 
-    <string name="subscription">Подписки</string>
-    <string name="followers">Подписчики</string>
-    <string name="posts">Посты</string>
+            <string name="subscription">Подписки</string>
+            <string name="followers">Подписчики</string>
+            <string name="posts">Посты</string>
+            <string name="saved">Сохранённое</string>
 
-    <!-- Basic Words -->
-    <string name="enter_text">Введите текст</string>
-    <string name="next">Далее</string>
-    <string name="theme">Тема</string>
-    <string name="edit_profile">Редактировать Профиль</string>
+        <!-- Basic Words -->
+            <string name="enter_text">Введите текст</string>
+            <string name="next">Далее</string>
+            <string name="theme">Тема</string>
+            <string name="edit_profile">Редактировать Профиль</string>
+
+        <!-- Warnings And Messages -->
+            <string name="empty_profile">Упс! \nПохоже здесь пусто!</string>
 
     <!-- Test Text -->
-    <string name="large_text">
+        <string name="large_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -131,6 +134,4 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="empty_profile">Oops! \nLooks like it\'s empty!</string>
-    <string name="saved">Saved</string>
 </resources>

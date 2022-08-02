@@ -15,21 +15,18 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         super(fragment);
     }
 
-    @NonNull
-    @Override
-    public Fragment createFragment(int position) {
-        switch (position) {
-            case 0:
-                return new PostsFragment();
-            case 1:
-                return new SavesFragment();
-            default:
-                return new PostsFragment();
-        }
-    }
-
     @Override
     public int getItemCount() {
         return 2;
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+        if (position == 0) {
+            return new PostsFragment();
+        } else {
+            return new SavesFragment();
+        }
     }
 }

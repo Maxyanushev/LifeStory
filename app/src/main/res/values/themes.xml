@@ -25,22 +25,7 @@
         <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="Widget.Nana.ImageView.Back" parent="@style/Widget.AppCompat.ImageButton">
-        <item name="android:background">@color/transparent</item>
-        <item name="tint">@color/black</item>
-    </style>
-
-    <style name="Widget.Nana.ImageView.Help" parent="@style/Widget.AppCompat.ImageButton">
-        <item name="android:background">@color/transparent</item>
-        <item name="tint">@color/black</item>
-    </style>
-
-    <style name="Widget.Nana.ImageView.Link" parent="@style/Widget.AppCompat.ImageButton">
-        <item name="android:background">@color/transparent</item>
-        <item name="tint">@color/black</item>
-    </style>
-
-    <style name="Widget.Nana.ImageView.Media" parent="@style/Widget.AppCompat.ImageButton">
+    <style name="Widget.Nana.ImageView" parent="@style/Widget.AppCompat.ImageButton">
         <item name="android:background">@color/transparent</item>
         <item name="tint">@color/black</item>
     </style>

@@ -31,7 +31,7 @@
 
                 <ImageButton
                     android:id="@+id/btn_back"
-                    style="@style/Widget.Nana.ImageView.Back"
+                    style="@style/Widget.Nana.ImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -57,7 +57,7 @@
 
                 <ImageView
                     android:id="@+id/btn_help"
-                    style="@style/Widget.Nana.ImageView.Help"
+                    style="@style/Widget.Nana.ImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -74,38 +74,133 @@
             android:id="@+id/cardView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="16dp"
             app:cardCornerRadius="@dimen/dimen_20"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardToolbar">
 
-            <TextView
-                android:id="@+id/textView8"
-                style="@style/Widget.Nana.TextView"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/frame_pink"
-                android:paddingStart="@dimen/dimen_16"
-                android:paddingTop="8dp"
-                android:paddingEnd="@dimen/dimen_16"
-                android:paddingBottom="8dp"
-                android:text="@string/large_text_recycler" />
+                android:layout_height="match_parent"
+                android:background="@drawable/frame_pink">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/sport_channel"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toEndOf="@+id/avatar_card"
+                            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="15h"
+                            app:layout_constraintStart_toEndOf="@+id/textView9"
+                            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="·"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/textView8"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            style="@style/Widget.Nana.ImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/ic_options_publication"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            style="@style/Widget.Nana.TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="mr_developer"
+                            app:layout_constraintStart_toEndOf="@+id/avatar_card"
+                            app:layout_constraintTop_toTopOf="@+id/avatar_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/avatar_card"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:cardCornerRadius="48dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/avatar_profile"
+                                style="@style/Widget.Nana.ImageView"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_default_avatar"/>
+
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <include
+                    android:id="@+id/include"
+                    layout="@layout/post_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="16dp"
             app:cardCornerRadius="@dimen/dimen_20"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3" >
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
@@ -125,7 +220,7 @@
                 android:paddingBottom="8dp"
                 android:textColorHint="?android:textColorHint"
                 android:textStyle="normal"
-                tools:ignore="RtlSymmetry,TextContrastCheck"/>
+                tools:ignore="RtlSymmetry,TextContrastCheck" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView

@@ -27,13 +27,14 @@
             android:id="@+id/version_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="start"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="8dp"
-            android:padding="15dp"
             android:layout_gravity="bottom"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:padding="15dp"
             android:text="@string/version_draw_menu"
             android:textColor="#777777"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

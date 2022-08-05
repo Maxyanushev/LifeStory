@@ -12,11 +12,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DetailPublicationActivity extends BaseActivity {
 
-    ActivityDetailPublicationBinding binding;
+    public ActivityDetailPublicationBinding binding;
 
-    FloatingActionButton fab;
-    Toolbar toolbar;
-    CollapsingToolbarLayout toolBarLayout;
+    private FloatingActionButton fab;
+    public Toolbar toolbar;
+    public CollapsingToolbarLayout toolBarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

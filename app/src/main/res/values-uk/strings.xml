@@ -34,6 +34,13 @@
             <string name="followers">Підписники</string>
             <string name="posts">Пости</string>
             <string name="saved">Збережене</string>
+            <string name="publish">Опублікувати</string>
+
+        <!-- For Post -->
+            <string name="hashtags_of_post">#парк #природа #харків</string>
+            <string name="title_of_post">Черепаха у парку</string>
+            <string name="description_for_post">Привіт всім! Сьогодні, гуляючи вулицями Харкова, я натрапив неподалік парку Шевченка на таку кумедну черепаху. Не міг поділитися з тобою, Інтернет!</string>
+            <string name="time_of_post">15г</string>
 
         <!-- Basic Words -->
             <string name="next">Далі</string>

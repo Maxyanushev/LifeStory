@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,8 @@ public class PreviewPublicationFragment extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.include.textView6.setMovementMethod(new ScrollingMovementMethod());
 
         getParentFragmentManager().setFragmentResultListener("dataFromPublication", this, (requestKey, result) -> {
             String data = result.getString("MyArg");

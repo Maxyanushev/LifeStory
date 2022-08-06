@@ -17,34 +17,24 @@
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ScrollView
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/Widget.Nana.TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
-            android:maxHeight="150dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="top"
+            android:maxHeight="400dp"
+            android:paddingBottom="8dp"
+            android:scrollbars="vertical"
+            android:text="@string/description_for_post"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView13">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView6"
-                    style="@style/Widget.Nana.TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:maxHeight="150dp"
-                    android:gravity="top"
-                    android:paddingBottom="8dp"
-                    android:text="@string/description_for_post"
-                    android:textSize="13sp" />
-            </LinearLayout>
-        </ScrollView>
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
             android:id="@+id/textView2"

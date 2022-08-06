@@ -47,25 +47,4 @@
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 
-    <fragment
-        android:id="@+id/previewPublicationFragment"
-        android:name="com.example.nana.publication.fragments.PreviewPublicationFragment"
-        android:label="fragment_preview_publication"
-        tools:layout="@layout/fragment_preview_publication" >
-        <argument
-            android:name="MyArg"
-            android:defaultValue="Hello Internet!" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/publicationFragment"
-        android:name="com.example.nana.publication.fragments.PublicationFragment"
-        android:label="fragment_publication"
-        tools:layout="@layout/fragment_publication" >
-        <action
-            android:id="@+id/action_publicationFragment_to_previewPublicationFragment"
-            app:destination="@id/previewPublicationFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
-    </fragment>
 </navigation>

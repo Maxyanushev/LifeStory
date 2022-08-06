@@ -1,18 +1,15 @@
 package com.example.nana.publication.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.Navigation;
 
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.example.nana.R;
 import com.example.nana.core.BaseFragment;
@@ -21,8 +18,10 @@ import com.example.nana.databinding.FragmentPublicationBinding;
 public class PublicationFragment extends BaseFragment {
 
     private FragmentPublicationBinding binding;
-
     private final PreviewPublicationFragment previewPublicationFragment = new PreviewPublicationFragment();
+
+    Bundle bundle = new Bundle();
+    String description = "";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,17 +43,21 @@ public class PublicationFragment extends BaseFragment {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void initListeners() {
         binding.cardButtonNext.setOnClickListener(v -> {
-
-            Bundle bundle = new Bundle();
-            String text = binding.etEnterText.getText().toString();
-            bundle.putString("MyArg", text);
+            description = binding.etEnterText.getText().toString();
+            bundle.putString("MyArg", description);
             getParentFragmentManager().setFragmentResult("dataFromPublication", bundle);
 
             FragmentTransaction fragmentTransaction = requireActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frame_layout, previewPublicationFragment);
             fragmentTransaction.commit();
         });
+
+        binding.cardTextBold.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><b>" + " " + "</b></font>"));
+        binding.cardTextItalic.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><i>" + " " + "</i></font>"));
+        binding.cardTextUnderline.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><u>" + " " + "</u></font>"));
+        binding.cardTextStrike.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><strike>" + " " + "</strike></font>"));
     }
 }

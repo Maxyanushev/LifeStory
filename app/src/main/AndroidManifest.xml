@@ -13,10 +13,13 @@
         android:theme="@style/Theme.Nana"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".SelectedActivity"
+            android:exported="false" />
+        <activity
             android:name=".publication.PublicationActivity"
             android:exported="false"
             android:label="@string/title_activity_main_publication"
-            android:theme="@style/Theme.Nana"/>
+            android:theme="@style/Theme.Nana" />
         <activity
             android:name=".publication.DetailPublicationActivity"
             android:exported="false"
@@ -32,4 +35,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nana.R;
@@ -24,6 +25,16 @@ public class ProfileFragment extends BaseFragment {
     public View root;
 
     public TextView textView;
+
+    public static boolean toolbar = false;
+
+    public ProfileFragment(boolean toolbarVisibility) {
+        toolbar = toolbarVisibility;
+    }
+
+    public ProfileFragment() {
+
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
@@ -48,12 +59,32 @@ public class ProfileFragment extends BaseFragment {
                     }
                 }).attach();
 
+        binding.backButton.setOnClickListener(v -> {
+            requireActivity().onBackPressed();
+        });
+
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        if (toolbar) {
+            binding.cardToolbarProfile.setVisibility(View.GONE);
+        } else {
+            binding.cardToolbarProfile.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

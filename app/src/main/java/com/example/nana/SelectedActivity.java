@@ -22,12 +22,7 @@ import com.example.nana.interfaces.OnBackPressed;
 import java.util.List;
 
 public class SelectedActivity extends BaseActivity {
-
-    private static final String TAG = "SelectedActivity";
-
     private static final String FRAGMENT_NAME = "fragment_name";
-    public MutableLiveData<String> toolBarTitle = new MutableLiveData<>();
-    TextView toolbarTitle;
 
     public static void startActivityWithFragment(@NonNull Context context,
                                                  @NonNull Class<? extends Fragment> fragmentClass,
@@ -53,17 +48,10 @@ public class SelectedActivity extends BaseActivity {
 
         setContentView(R.layout.activity_selected);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-
-        toolbarTitle = findViewById(R.id.toolbar_title);
-        setSupportActionBar(toolbar);
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
-
-        toolbar.setTitle("");
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -76,17 +64,6 @@ public class SelectedActivity extends BaseActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container_selected_activity, fragmentName, extras)
                 .commit();
-
-        toolBarTitle.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                if (s == null) return;
-
-                Log.d(TAG, "onChanged: ");
-
-                toolbarTitle.setText(s);
-            }
-        });
     }
 
     @Override
@@ -106,46 +83,8 @@ public class SelectedActivity extends BaseActivity {
         }
     }
 
-    public void setToolBarTitle(String toolBarTitle){
-        try {
-            toolbarTitle.setText(toolBarTitle);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void changeToolbarVisibility(boolean isVisible) {
-        int visibility;
-        if (isVisible) {
-            visibility = View.VISIBLE;
-        } else {
-            visibility = View.GONE;
-        }
-        View toolbar = findViewById(R.id.toolbar);
-        if (toolbar == null) {
-            return;
-        }
-        toolbar.setVisibility(visibility);
-        findViewById(R.id.toolbar_title).setVisibility(visibility);
-    }
-
     @Override
     public void onBackPressed() {
-        boolean handled = false;
-        List<Fragment> fragments = getSupportFragmentManager().getFragments();
-
-        for (Fragment f : fragments) {
-            if (f instanceof OnBackPressed) {
-                handled = ((OnBackPressed) f).onBackPressed();
-
-                if (handled) {
-                    break;
-                }
-            }
-        }
-
-        if (!handled) {
-            super.onBackPressed();
-        }
+        super.onBackPressed();
     }
 }

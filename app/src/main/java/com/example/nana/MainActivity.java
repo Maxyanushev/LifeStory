@@ -12,6 +12,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -24,11 +25,14 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityMainBinding;
+import com.example.nana.databinding.FragmentProfileBinding;
 import com.example.nana.fragments.AddPublicationFragment;
 import com.example.nana.fragments.FeedFragment;
-import com.example.nana.fragments.HomeFragment;
+import com.example.nana.fragments.NotificationFragment;
+import com.example.nana.fragments.SearchFragment;
 import com.example.nana.publication.DetailPublicationActivity;
 import com.example.nana.publication.PublicationActivity;
+import com.example.nana.publication.fragments.PublicationFragment;
 import com.example.nana.ui.history.HistoryFragment;
 import com.example.nana.ui.instruction.InstructionFragment;
 import com.example.nana.ui.news.NewsFragment;
@@ -37,7 +41,6 @@ import com.example.nana.ui.replenishment.ReplenishmentFragment;
 import com.example.nana.ui.settings.SettingsFragment;
 import com.example.nana.ui.support.SupportFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -70,7 +73,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public void init() {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//        setSupportActionBar(binding.appBarMain.toolbar);
 
         drawer = binding.drawerLayout;
         navigationView = binding.navView;
@@ -79,10 +81,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_history, R.id.nav_news,
                 R.id.nav_replenishment, R.id.nav_support, R.id.nav_instruction,
                 R.id.nav_settings).setOpenableLayout(drawer).build();
-
-//        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-//        NavigationUI.setupWithNavController(navigationView, navController);
 
         navHeader = navigationView.getHeaderView(0);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -107,15 +105,23 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.home:
-                    replaceFragment(new HomeFragment());
+                    replaceFragment(new FeedFragment());
+                    break;
+
+                case R.id.search:
+                    replaceFragment(new SearchFragment());
                     break;
 
                 case R.id.add:
-                    replaceFragment(new AddPublicationFragment());
+                    replaceFragment(new PublicationFragment());
                     break;
 
-                case R.id.feed:
-                    replaceFragment(new FeedFragment());
+                case R.id.notification:
+                    replaceFragment(new NotificationFragment());
+                    break;
+
+                case R.id.profile:
+                    replaceFragment(new ProfileFragment(true));
                     break;
             }
             return true;

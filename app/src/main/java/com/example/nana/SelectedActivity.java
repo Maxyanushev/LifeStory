@@ -2,24 +2,14 @@ package com.example.nana;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
 import com.example.nana.core.BaseActivity;
-import com.example.nana.interfaces.OnBackPressed;
-
-import java.util.List;
 
 public class SelectedActivity extends BaseActivity {
     private static final String FRAGMENT_NAME = "fragment_name";

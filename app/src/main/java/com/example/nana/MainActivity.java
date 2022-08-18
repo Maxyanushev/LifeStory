@@ -12,7 +12,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -25,8 +24,6 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityMainBinding;
-import com.example.nana.databinding.FragmentProfileBinding;
-import com.example.nana.fragments.AddPublicationFragment;
 import com.example.nana.fragments.FeedFragment;
 import com.example.nana.fragments.NotificationFragment;
 import com.example.nana.fragments.SearchFragment;
@@ -70,6 +67,14 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         initListeners();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        replaceFragment(new FeedFragment());
+//        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, new FeedFragment()).commit();
+    }
+
     public void init() {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -86,6 +91,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         onlineStatus = navHeader.findViewById(R.id.online_status);
         onlineStatusText = navHeader.findViewById(R.id.online_status_text);
+
+        replaceFragment(new FeedFragment());
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
+//        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, new FeedFragment()).commit();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -113,7 +123,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     break;
 
                 case R.id.add:
-                    replaceFragment(new PublicationFragment());
+                    Intent intent = new Intent(this, PublicationActivity.class);
+                    startActivity(intent);
+                    bottomNavigationView.requestFocus(R.id.home);
                     break;
 
                 case R.id.notification:
@@ -121,7 +133,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     break;
 
                 case R.id.profile:
-                    replaceFragment(new ProfileFragment(true));
+                    replaceFragment(new ProfileFragment(false));
                     break;
             }
             return true;

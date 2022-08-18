@@ -26,7 +26,7 @@ public class ProfileFragment extends BaseFragment {
 
     public TextView textView;
 
-    public static boolean toolbar = false;
+    public static boolean toolbar = true;
 
     public ProfileFragment(boolean toolbarVisibility) {
         toolbar = toolbarVisibility;
@@ -59,9 +59,7 @@ public class ProfileFragment extends BaseFragment {
                     }
                 }).attach();
 
-        binding.backButton.setOnClickListener(v -> {
-            requireActivity().onBackPressed();
-        });
+        binding.backButton.setOnClickListener(v -> requireActivity().onBackPressed());
 
         return root;
     }
@@ -70,11 +68,12 @@ public class ProfileFragment extends BaseFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if (toolbar) {
+        if (!toolbar) {
             binding.cardToolbarProfile.setVisibility(View.GONE);
         } else {
             binding.cardToolbarProfile.setVisibility(View.VISIBLE);
         }
+        toolbar = true;
     }
 
     @Override

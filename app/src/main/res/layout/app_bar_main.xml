@@ -41,13 +41,15 @@
 
                 <ImageView
                     android:id="@+id/imageView7"
+                    style="@style/Widget.Nana.ImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_menu_drawer" />
+                    app:srcCompat="@drawable/ic_menu_drawer"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:id="@+id/textView2"

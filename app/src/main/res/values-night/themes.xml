@@ -28,4 +28,8 @@
     <style name="Widget.Nana.CardView" parent="Widget.MaterialComponents.CardView">
         <item name="android:background">@color/black</item>
     </style>
+
+    <style name="Theme.Nana.Toolbar">
+        <item name="android:background">@color/black</item>
+    </style>
 </resources>

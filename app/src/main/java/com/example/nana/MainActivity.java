@@ -24,12 +24,12 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityMainBinding;
+import com.example.nana.databinding.ContentMainBinding;
 import com.example.nana.fragments.FeedFragment;
 import com.example.nana.fragments.NotificationFragment;
 import com.example.nana.fragments.SearchFragment;
 import com.example.nana.publication.DetailPublicationActivity;
 import com.example.nana.publication.PublicationActivity;
-import com.example.nana.publication.fragments.PublicationFragment;
 import com.example.nana.ui.history.HistoryFragment;
 import com.example.nana.ui.instruction.InstructionFragment;
 import com.example.nana.ui.news.NewsFragment;
@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private ContentMainBinding contentMainBinding;
 
     public DrawerLayout drawer;
     public NavigationView navigationView;
@@ -79,6 +80,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        contentMainBinding = ContentMainBinding.inflate(getLayoutInflater());
+
         drawer = binding.drawerLayout;
         navigationView = binding.navView;
         navigationView.setNavigationItemSelectedListener(MainActivity.this);
@@ -100,7 +103,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @SuppressLint("NonConstantResourceId")
     public void initListeners() {
-        binding.appBarMain.fab.setOnClickListener(v -> newDetailPost());
+        contentMainBinding.fab.setOnClickListener(v -> newDetailPost());
 
         onlineStatus.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -120,12 +123,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
                 case R.id.search:
                     replaceFragment(new SearchFragment());
-                    break;
-
-                case R.id.add:
-                    Intent intent = new Intent(this, PublicationActivity.class);
-                    startActivity(intent);
-                    bottomNavigationView.requestFocus(R.id.home);
                     break;
 
                 case R.id.notification:

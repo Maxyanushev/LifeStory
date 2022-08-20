@@ -36,6 +36,10 @@
             <string name="saved">Сохранённое</string>
             <string name="publish">Опубликовать</string>
 
+            <string name="feed">Лента</string>
+            <string name="search">Поиск</string>
+            <string name="notification">Уведомления</string>
+
         <!-- For Post -->
             <string name="hashtags_of_post">#парк #природа #харьков</string>
             <string name="title_of_post">Черепаха в парке</string>
@@ -50,6 +54,7 @@
 
         <!-- Warnings And Messages -->
             <string name="empty_profile">Упс! \nПохоже здесь пусто!</string>
+            <string name="in_developing">В разработке!</string>
 
     <!-- Test Text -->
         <string name="large_text">

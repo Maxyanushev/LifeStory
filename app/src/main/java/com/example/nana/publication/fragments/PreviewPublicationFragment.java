@@ -32,8 +32,11 @@ public class PreviewPublicationFragment extends BaseFragment {
         binding.include.textView6.setMovementMethod(new ScrollingMovementMethod());
 
         getParentFragmentManager().setFragmentResultListener("dataFromPublication", this, (requestKey, result) -> {
-            String data = result.getString("MyArg");
+            String data = result.getString("MyDescription");
             binding.include.textView6.setText(Html.fromHtml(data));
+
+            data = result.getString("MyTheme");
+            binding.include.textView13.setText(data);
         });
     }
 }

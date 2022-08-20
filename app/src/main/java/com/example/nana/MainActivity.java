@@ -38,13 +38,13 @@ import com.example.nana.ui.replenishment.ReplenishmentFragment;
 import com.example.nana.ui.settings.SettingsFragment;
 import com.example.nana.ui.support.SupportFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    private ContentMainBinding contentMainBinding;
 
     public DrawerLayout drawer;
     public NavigationView navigationView;
@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public BottomNavigationView bottomNavigationView;
 
     public View navHeader;
+    public FloatingActionButton fab;
 
     public SharedPreferences.Editor editor;
     public SharedPreferences wmbPreference;
@@ -73,14 +74,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         super.onResume();
 
         replaceFragment(new FeedFragment());
-//        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, new FeedFragment()).commit();
     }
 
     public void init() {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        contentMainBinding = ContentMainBinding.inflate(getLayoutInflater());
 
         drawer = binding.drawerLayout;
         navigationView = binding.navView;
@@ -98,12 +96,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         replaceFragment(new FeedFragment());
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
-//        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, new FeedFragment()).commit();
+        fab = findViewById(R.id.bottom_navigation_fab);
     }
 
     @SuppressLint("NonConstantResourceId")
     public void initListeners() {
-        contentMainBinding.fab.setOnClickListener(v -> newDetailPost());
+        fab.setOnClickListener(v -> newDetailPost());
 
         onlineStatus.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {

@@ -22,6 +22,7 @@ public class PublicationFragment extends BaseFragment {
 
     Bundle bundle = new Bundle();
     String description = "";
+    String theme = "";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,7 +48,11 @@ public class PublicationFragment extends BaseFragment {
     private void initListeners() {
         binding.cardButtonNext.setOnClickListener(v -> {
             description = binding.etEnterText.getText().toString();
-            bundle.putString("MyArg", description);
+            bundle.putString("MyDescription", description);
+
+            theme = binding.etTheme.getText().toString();
+            bundle.putString("MyTheme", theme);
+
             getParentFragmentManager().setFragmentResult("dataFromPublication", bundle);
 
             FragmentTransaction fragmentTransaction = requireActivity().getSupportFragmentManager().beginTransaction();
@@ -55,9 +60,24 @@ public class PublicationFragment extends BaseFragment {
             fragmentTransaction.commit();
         });
 
-        binding.cardTextBold.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><b>" + " " + "</b></font>"));
-        binding.cardTextItalic.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><i>" + " " + "</i></font>"));
-        binding.cardTextUnderline.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><u>" + " " + "</u></font>"));
-        binding.cardTextStrike.setOnClickListener(v -> binding.etEnterText.setText(binding.etEnterText.getText() + "<font><strike>" + " " + "</strike></font>"));
+        binding.cardTextBold.setOnClickListener(v -> {
+            binding.etEnterText.setText(binding.etEnterText.getText() + "<font><b>" + "" + "</b></font>");
+            binding.etEnterText.setSelection(binding.etEnterText.length() - 11);
+        });
+
+        binding.cardTextItalic.setOnClickListener(v -> {
+            binding.etEnterText.setText(binding.etEnterText.getText() + "<font><i>" + "" + "</i></font>");
+            binding.etEnterText.setSelection(binding.etEnterText.length() - 11);
+        });
+
+        binding.cardTextUnderline.setOnClickListener(v -> {
+            binding.etEnterText.setText(binding.etEnterText.getText() + "<font><u>" + "" + "</u></font>");
+            binding.etEnterText.setSelection(binding.etEnterText.length() - 11);
+        });
+
+        binding.cardTextStrike.setOnClickListener(v -> {
+            binding.etEnterText.setText(binding.etEnterText.getText() + "<font><strike>" + "" + "</strike></font>");
+            binding.etEnterText.setSelection(binding.etEnterText.length() - 16);
+        });
     }
 }

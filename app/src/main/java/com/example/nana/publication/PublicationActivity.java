@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nana.R;
 import com.example.nana.databinding.ActivityPublicationBinding;
-import com.example.nana.databinding.FragmentPublicationBinding;
 import com.example.nana.publication.fragments.PublicationFragment;
 
 public class PublicationActivity extends AppCompatActivity {

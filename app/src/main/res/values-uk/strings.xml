@@ -40,6 +40,9 @@
             <string name="search">Пошук</string>
             <string name="notification">Повідомлення</string>
 
+            <string name="personal">Особисті</string>
+            <string name="groups">Групи</string>
+
         <!-- For Post -->
             <string name="hashtags_of_post">#парк #природа #харків</string>
             <string name="title_of_post">Черепаха у парку</string>
@@ -146,4 +149,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="chats">Chats</string>
 </resources>

@@ -22,9 +22,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.nana.chat.ChatActivity;
 import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityMainBinding;
-import com.example.nana.databinding.ContentMainBinding;
 import com.example.nana.fragments.FeedFragment;
 import com.example.nana.fragments.NotificationFragment;
 import com.example.nana.fragments.SearchFragment;
@@ -111,7 +111,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             }
         });
 
-        binding.appBarMain.imageView7.setOnClickListener(v -> drawer.openDrawer(GravityCompat.START));
+        binding.appBarMain.imageButton3.setOnClickListener(v -> drawer.openDrawer(GravityCompat.START));
+        binding.appBarMain.imageButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ChatActivity.class);
+            startActivity(intent);
+        });
+//        binding.appBarMain.imageButton.setOnClickListener(v -> replaceActivity(ChatActivity.class));
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -138,14 +143,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private void newDetailPost() {
         wmbPreference = PreferenceManager.getDefaultSharedPreferences(this);
         boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
-        Intent intent;
         if (isFirstRun) {
-            // Code to run once
-            intent = new Intent(this, DetailPublicationActivity.class);
+            replaceActivity(DetailPublicationActivity.class);
         } else {
-            intent = new Intent(this, PublicationActivity.class);
+            replaceActivity(PublicationActivity.class);
         }
-        startActivity(intent);
         editor = wmbPreference.edit();
         editor.putBoolean("FIRSTRUN", false);
         editor.apply();
@@ -209,5 +211,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.nav_host_fragment_content_main, fragment);
         transaction.commit();
+    }
+
+    public void replaceActivity(Class activity) {
+        Intent intent = new Intent(this, activity);
+        startActivity(intent);
     }
 }

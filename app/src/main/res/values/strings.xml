@@ -1,89 +1,93 @@
 <resources>
     <!-- Untranslatable Text -->
-        <string name="app_name" translatable="false">Nana</string>
-        <string name="todo" translatable="false">TODO</string>
+    <string name="app_name" translatable="false">Nana</string>
+    <string name="todo" translatable="false">TODO</string>
 
     <!-- Titles -->
-        <string name="title_activity_main_publication" translatable="false">MainPublicationActivity</string>
-        <string name="title_activity_scrolling" translatable="false">ScrollingActivity</string>
+    <string name="title_activity_main_publication" translatable="false">MainPublicationActivity</string>
+    <string name="title_activity_scrolling" translatable="false">ScrollingActivity</string>
+    <string name="title_activity_chat" translatable="false">ChatActivity</string>
 
     <!-- Menu Elements -->
-        <string name="menu_profile">Profile</string>
-        <string name="menu_history">History</string>
-        <string name="menu_news">News</string>
-        <string name="menu_replenishment">Replenishment</string>
-        <string name="menu_support">Support</string>
-        <string name="menu_instruction">Instruction</string>
-        <string name="menu_settings">Settings</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_history">History</string>
+    <string name="menu_news">News</string>
+    <string name="menu_replenishment">Replenishment</string>
+    <string name="menu_support">Support</string>
+    <string name="menu_instruction">Instruction</string>
+    <string name="menu_settings">Settings</string>
 
     <!-- Channel Names -->
-        <string name="anime_channel">/anim/ - Anime</string>
-        <string name="creation_channel">/cr/ - Creation</string>
-        <string name="politics_channel">/pol/ - Politics</string>
-        <string name="socially_channel">/soc/ - Socially</string>
-        <string name="games_channel">/g/ - Games</string>
-        <string name="sport_channel">/sp/ - Sport</string>
+    <string name="anime_channel">/anim/ - Anime</string>
+    <string name="creation_channel">/cr/ - Creation</string>
+    <string name="politics_channel">/pol/ - Politics</string>
+    <string name="socially_channel">/soc/ - Socially</string>
+    <string name="games_channel">/g/ - Games</string>
+    <string name="sport_channel">/sp/ - Sport</string>
 
     <!-- Text Types -->
-        <string name="n_strike" translatable="false"><strike>N</strike></string>
-        <string name="n_underlined" translatable="false"><u>N</u></string>
-        <string name="n_bold" translatable="false"><b>N</b></string>
-        <string name="n_italics" translatable="false"><i>N</i></string>
+    <string name="n_strike" translatable="false"><strike>N</strike></string>
+    <string name="n_underlined" translatable="false"><u>N</u></string>
+    <string name="n_bold" translatable="false"><b>N</b></string>
+    <string name="n_italics" translatable="false"><i>N</i></string>
 
     <!-- Other Strings -->
-        <!-- Main -->
-            <string name="version_draw_menu">Version 1.0.0</string>
+    <!-- Main -->
+    <string name="version_draw_menu">Version 1.0.0</string>
 
-        <!-- App Strings -->
-            <string name="online_status_off">Online Status: Off</string>
-            <string name="online_status_on">Online Status: On</string>
+    <!-- App Strings -->
+    <string name="online_status_off">Online Status: Off</string>
+    <string name="online_status_on">Online Status: On</string>
 
-            <string name="reputation">Reputation</string>
-            <string name="nana_coins">Nana-Coins</string>
+    <string name="reputation">Reputation</string>
+    <string name="nana_coins">Nana-Coins</string>
 
-            <string name="new_publication">New Publication</string>
-            <string name="choose_channel">Choose a channel</string>
+    <string name="new_publication">New Publication</string>
+    <string name="choose_channel">Choose a channel</string>
 
-            <string name="subscription">Subscription</string>
-            <string name="followers">Followers</string>
-            <string name="posts">Posts</string>
-            <string name="saved">Saved</string>
-            <string name="publish">Publish</string>
+    <string name="subscription">Subscription</string>
+    <string name="followers">Followers</string>
+    <string name="posts">Posts</string>
+    <string name="saved">Saved</string>
+    <string name="publish">Publish</string>
 
-            <string name="feed">Feed</string>
-            <string name="search">Search</string>
-            <string name="notification">Notification</string>
+    <string name="feed">Feed</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
 
-            <string name="nick_name" translatable="false">mr_developer</string>
+    <string name="nick_name" translatable="false">mr_developer</string>
 
-        <!-- Special -->
-            <string name="point" translatable="false">·</string>
+    <string name="personal">Personal</string>
+    <string name="groups">Groups</string>
 
-        <!-- For Post -->
-            <string name="hashtags_of_post">#park #nature #kharkiv</string>
-            <string name="title_of_post">Turtle in the park</string>
-            <string name="description_for_post">Hi everyone! Today, walking along the streets of Kharkov, I came across such a funny turtle not far from Shevchenko Park. Could not share with you, the Internet!</string>
-            <string name="time_of_post">15h</string>
+    <!-- Special -->
+    <string name="point" translatable="false">·</string>
 
-        <!-- Basic Words -->
-            <string name="next">Next</string>
-            <string name="theme">Theme</string>
-            <string name="enter_text">Enter text</string>
-            <string name="edit_profile">Edit Profile</string>
+    <!-- For Post -->
+    <string name="hashtags_of_post">#park #nature #kharkiv</string>
+    <string name="title_of_post">Turtle in the park</string>
+    <string name="description_for_post">Hi everyone! Today, walking along the streets of Kharkov, I came across such a funny turtle not far from Shevchenko Park. Could not share with you, the Internet!</string>
+    <string name="time_of_post">15h</string>
+
+    <!-- Basic Words -->
+    <string name="next">Next</string>
+    <string name="theme">Theme</string>
+    <string name="enter_text">Enter text</string>
+    <string name="edit_profile">Edit Profile</string>
 
     <!-- Numbers -->
-        <string name="one_hundred" translatable="false">100</string>
-        <string name="ten_thousand" translatable="false">10 000</string>
+    <string name="one_hundred" translatable="false">100</string>
+    <string name="ten_thousand" translatable="false">10 000</string>
 
-        <!-- Special Numbers -->
-            <string name="amount_of_images" translatable="false">+4</string>
+    <!-- Special Numbers -->
+    <string name="amount_of_images" translatable="false">+4</string>
 
     <!-- Warnings And Messages -->
-        <string name="empty_profile">Oops! \nLooks like it\'s empty!</string>
-        <string name="in_developing">In Developing!</string>
+    <string name="empty_profile">Oops! \nLooks like it\'s empty!</string>
+    <string name="in_developing">In Developing!</string>
 
     <!-- Test Text -->
-        <string name="large_text">
+    <string name="large_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -172,5 +176,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-
+    <string name="chats">Chats</string>
 </resources>

@@ -7,14 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".chat.fragments.PersonalChatsFragment">
 
-    <TextView
-        android:id="@+id/textView19"
-        style="@style/Widget.Nana.TextView"
+    <include
+        layout="@layout/item_developing_alert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/in_developing"
-        android:textSize="@dimen/dimen_20_text"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -37,10 +37,10 @@
                         android:background="@drawable/frame_pink"
                         android:gravity="center"
                         android:paddingStart="16dp"
-                        android:paddingTop="12dp"
+                        android:paddingTop="8dp"
                         android:paddingEnd="16dp"
-                        android:paddingBottom="12dp"
-                        android:text="Опубликовать"
+                        android:paddingBottom="8dp"
+                        android:text="Сохранить"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
@@ -62,12 +62,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="12dp"
                     android:text="@string/menu_settings"
                     android:textSize="@dimen/dimen_20_text"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
                     app:layout_constraintStart_toEndOf="@+id/imageButton6"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/imageButton6" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -81,7 +81,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
@@ -119,7 +119,7 @@
                                     android:background="@color/transparent"
                                     app:layout_constraintStart_toStartOf="@+id/imageView8"
                                     app:layout_constraintTop_toBottomOf="@+id/imageView8"
-                                    app:srcCompat="@drawable/ic_share" />
+                                    app:srcCompat="@drawable/ic_exit" />
 
                                 <ImageButton
                                     android:id="@+id/imageButton7"
@@ -195,22 +195,12 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
-                                    android:text="Поделиться профилем"
+                                    android:text="Выйти"
                                     android:textSize="15sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintStart_toEndOf="@+id/imageButton9"
                                     app:layout_constraintTop_toTopOf="@+id/imageButton9" />
 
-                                <ImageButton
-                                    android:id="@+id/imageButton10"
-                                    style="@style/Widget.Nana.ImageView"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:background="@color/transparent"
-                                    app:layout_constraintBottom_toBottomOf="@+id/textView19"
-                                    app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-                                    app:layout_constraintTop_toTopOf="@+id/textView19"
-                                    app:srcCompat="@drawable/ic_arrow_right" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -268,6 +258,17 @@
                                 android:elevation="10dp">
 
                                 <ImageButton
+                                    android:id="@+id/imageButton12"
+                                    style="@style/Widget.Nana.ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/transparent"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView20"
+                                    app:layout_constraintEnd_toEndOf="@+id/imageButton1"
+                                    app:layout_constraintTop_toTopOf="@+id/textView20"
+                                    app:srcCompat="@drawable/ic_arrow_right" />
+
+                                <ImageButton
                                     android:id="@+id/imageButton100"
                                     style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
@@ -276,19 +277,28 @@
                                     android:background="@color/transparent"
                                     app:layout_constraintStart_toStartOf="@+id/imageView999"
                                     app:layout_constraintTop_toBottomOf="@+id/imageView999"
-                                    app:srcCompat="@drawable/ic_share" />
+                                    app:srcCompat="@drawable/ic_massages" />
 
-                                <ImageButton
-                                    android:id="@+id/imageButton000"
-                                    style="@style/Widget.Nana.ImageView"
+                                <TextView
+                                    android:id="@+id/textView20"
+                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:background="@color/transparent"
+                                    android:layout_marginStart="16dp"
+                                    android:text="От нас"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView9"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+                                <Switch
+                                    android:id="@+id/switch1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView17"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="@+id/textView17"
-                                    app:srcCompat="@drawable/ic_arrow_right" />
+                                    tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                                 <ImageView
                                     android:id="@+id/imageView999"
@@ -298,7 +308,7 @@
                                     android:layout_marginTop="16dp"
                                     app:layout_constraintStart_toStartOf="@+id/imageView1"
                                     app:layout_constraintTop_toBottomOf="@+id/imageView1"
-                                    app:srcCompat="@drawable/ic_lock" />
+                                    app:srcCompat="@drawable/ic_notification_post" />
 
                                 <TextView
                                     android:id="@+id/textView10"
@@ -306,7 +316,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
-                                    android:text="Конфиденциальность"
+                                    android:text="Публикации и комментарии"
                                     android:textSize="15sp"
                                     app:layout_constraintBottom_toBottomOf="@+id/imageView999"
                                     app:layout_constraintStart_toEndOf="@+id/imageView999"
@@ -332,7 +342,7 @@
                                     android:layout_marginTop="16dp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/ic_avatar" />
+                                    app:srcCompat="@drawable/ic_notifications_off" />
 
                                 <TextView
                                     android:id="@+id/textView17"
@@ -340,7 +350,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
-                                    android:text="Управление аккаунтом"
+                                    android:text="Приостановить всё"
                                     android:textSize="15sp"
                                     app:layout_constraintBottom_toBottomOf="@+id/imageView1"
                                     app:layout_constraintStart_toEndOf="@+id/imageView1"
@@ -352,7 +362,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
-                                    android:text="Поделиться профилем"
+                                    android:text="Сообщения"
                                     android:textSize="15sp"
                                     app:layout_constraintBottom_toBottomOf="@+id/imageButton100"
                                     app:layout_constraintStart_toEndOf="@+id/imageButton100"
@@ -363,11 +373,22 @@
                                     style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
                                     android:background="@color/transparent"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView10"
-                                    app:layout_constraintEnd_toEndOf="@+id/imageButton000"
+                                    app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="@+id/textView10"
                                     app:srcCompat="@drawable/ic_arrow_right" />
+
+                                <ImageView
+                                    android:id="@+id/imageView9"
+                                    style="@style/Widget.Nana.ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintStart_toStartOf="@+id/imageButton100"
+                                    app:layout_constraintTop_toBottomOf="@+id/imageButton100"
+                                    app:srcCompat="@drawable/ic_avatar" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -391,7 +412,221 @@
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="16dp"
                                 android:layout_marginBottom="40dp"
-                                android:text="Аккаунт"
+                                android:text="Уведомления"
+                                android:textSize="@dimen/dimen_20_text"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="48dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardBackgroundColor="#2C45FF"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="@dimen/dimen_10"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/cardView10"
+                            app:layout_constraintTop_toTopOf="@+id/cardView10" >
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingBottom="@dimen/dimen_16">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView21">
+
+                                    <include
+                                        layout="@layout/layout_switch_color_mode"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </androidx.cardview.widget.CardView>
+
+                                <ImageButton
+                                    android:id="@+id/imageButton13"
+                                    style="@style/Widget.Nana.ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:background="@color/transparent"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView22"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView22"
+                                    app:srcCompat="@drawable/ic_arrow_right" />
+
+                                <ImageView
+                                    android:id="@+id/imageView11"
+                                    style="@style/Widget.Nana.ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintStart_toStartOf="@+id/imageView10"
+                                    app:layout_constraintTop_toBottomOf="@+id/imageView10"
+                                    app:srcCompat="@drawable/ic_language" />
+
+                                <TextView
+                                    android:id="@+id/textView21"
+                                    style="@style/Widget.Nana.TextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:text="Тема"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView10"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView10" />
+
+                                <ImageView
+                                    android:id="@+id/imageView10"
+                                    style="@style/Widget.Nana.ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_palette" />
+
+                                <TextView
+                                    android:id="@+id/textView22"
+                                    style="@style/Widget.Nana.TextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:text="Язык"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView11"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView11" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            app:cardBackgroundColor="#2F353E"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/textView999"
+                                style="@style/Widget.Nana.TextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="40dp"
+                                android:text="Внешний вид"
+                                android:textSize="@dimen/dimen_20_text"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="@dimen/dimen_16"
+                            app:cardBackgroundColor="#2C45FF"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="@dimen/dimen_10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/cardView11"
+                            app:layout_constraintTop_toTopOf="@+id/cardView11">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingBottom="@dimen/dimen_16">
+
+                                <ImageButton
+                                    android:id="@+id/imageButton14"
+                                    style="@style/Widget.Nana.ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:background="@color/transparent"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView23"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView23"
+                                    app:srcCompat="@drawable/ic_arrow_right" />
+
+                                <TextView
+                                    android:id="@+id/textView23"
+                                    style="@style/Widget.Nana.TextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:text="Использование памяти"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView12"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView12" />
+
+                                <ImageView
+                                    android:id="@+id/imageView12"
+                                    style="@style/Widget.Nana.ImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_help" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            app:cardBackgroundColor="#2F353E"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/textView9999"
+                                style="@style/Widget.Nana.TextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="40dp"
+                                android:text="Данные и мультимедия"
                                 android:textSize="@dimen/dimen_20_text"
                                 android:textStyle="bold" />
                         </androidx.cardview.widget.CardView>

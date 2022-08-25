@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/group_color_mode"
+            android:layout_width="104dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:background="#2C45FF"
+            android:gravity="center|left"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/button_auto"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="3dp"
+                android:button="@drawable/item_autocolor_mode"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/button_night"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:button="@drawable/item_nightcolor_mode"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/button_day"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:button="@drawable/item_lightcolor_mode"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+    </FrameLayout>
+</layout>

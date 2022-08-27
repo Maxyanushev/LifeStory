@@ -25,7 +25,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/frame_pink">
+                android:background="@drawable/frame_blue">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView4"
@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:autofillHints=""
-                android:background="@drawable/frame_pink"
+                android:background="@drawable/frame_blue"
                 android:hint="@string/hashtags_of_post"
                 android:inputType="textMultiLine"
                 android:maxHeight="96dp"
@@ -189,7 +189,7 @@
                 style="@style/Widget.Nana.TextView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/frame_pink"
+                android:background="@drawable/frame_blue"
                 android:gravity="center"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"

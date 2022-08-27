@@ -36,7 +36,15 @@
     </style>
 
     <style name="Widget.Nana.CardView" parent="Widget.MaterialComponents.CardView">
-        <item name="android:background">@drawable/frame_pink</item>
+        <item name="android:background">@drawable/frame_blue</item>
+    </style>
+
+    <style name="Widget.Nana.CardViewSettings1" parent="Widget.MaterialComponents.CardView">
+        <item name="android:background">@drawable/frame_grey</item>
+    </style>
+
+    <style name="Widget.Nana.CardViewSettings2" parent="Widget.MaterialComponents.CardView">
+
     </style>
 
     <style name="Theme.Nana.Toolbar">

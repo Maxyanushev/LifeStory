@@ -205,7 +205,7 @@
                 style="@style/Widget.Nana.TextView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/frame_pink"
+                android:background="@drawable/frame_blue"
                 android:gravity="center"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"

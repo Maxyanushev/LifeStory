@@ -150,4 +150,17 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="chats">Chats</string>
+    <string name="save">Сохранить</string>
+    <string name="сonfidentiality">Конфиденциальность</string>
+    <string name="account_management">Управление аккаунтом</string>
+    <string name="Exit">Выйти</string>
+    <string name="account">Аккаунт</string>
+    <string name="from_us">От нас</string>
+    <string name="publication_and_comments">Публикации и комментарии</string>
+    <string name="pause_everything">Приостановить всё</string>
+    <string name="messages">Сообщения</string>
+    <string name="language">Язык</string>
+    <string name="appearance">Внешний вид</string>
+    <string name="memory_usage">Использование памяти</string>
+    <string name="data_and_multimedia">Данные и мультимедия</string>
 </resources>

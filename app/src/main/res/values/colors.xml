@@ -20,4 +20,5 @@
 
     <!-- Specific Colors -->
     <color name="transparent">#00000000</color>
+    <color name="blue_00B">#00BFFF</color>
 </resources>

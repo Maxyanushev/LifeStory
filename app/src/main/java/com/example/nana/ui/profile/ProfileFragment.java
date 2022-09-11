@@ -1,5 +1,6 @@
 package com.example.nana.ui.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +15,11 @@ import com.example.nana.R;
 import com.example.nana.adapters.ViewPagerAdapter;
 import com.example.nana.core.BaseFragment;
 import com.example.nana.databinding.FragmentProfileBinding;
+import com.example.nana.login.LoginActivity;
 import com.example.nana.ui.profile.fragments.PostsFragment;
 import com.example.nana.ui.profile.fragments.SavesFragment;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends BaseFragment {
 
@@ -60,6 +63,11 @@ public class ProfileFragment extends BaseFragment {
                 }).attach();
 
         binding.backButton.setOnClickListener(v -> requireActivity().onBackPressed());
+        binding.buttonExit.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(requireActivity(), LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            requireActivity().finish();
+        });
 
         return root;
     }

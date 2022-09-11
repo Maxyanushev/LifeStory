@@ -54,6 +54,8 @@
             <string name="memory_usage">Використання пам\'яті</string>
             <string name="data_and_multimedia">Данные и мультимедия</string>
 
+            <string name="registration">Реєстрація</string>
+
         <!-- For Post -->
             <string name="hashtags_of_post">#парк #природа #харків</string>
             <string name="title_of_post">Черепаха у парку</string>
@@ -72,9 +74,20 @@
             <string name="messages">Повідомлення</string>
             <string name="language">Мова</string>
 
+            <string name="username">Ім\'я користувача</string>
+            <string name="email">Електронна пошта</string>
+            <string name="password">Пароль</string>
+
+            <string name="login">Увійти</string>
+            <string name="register">Зареєструватися</string>
+
         <!-- Warnings And Messages -->
             <string name="empty_profile">Йой! \nЗдається тут нічого немає!</string>
             <string name="in_developing">У розробці!</string>
+            <string name="already_have_an_account">Вже маєте акаунт? Увійдіть!</string>
+            <string name="do_not_have_an_account">Не маєте акаунту? Зареєструйтесь!</string>
+            <string name="or_login_with">Або увійдіть за допомогою</string>
+            <string name="or_register_with">Або зареєструйтесь за домопогою</string>
 
     <!-- Test Text -->
         <string name="large_text">

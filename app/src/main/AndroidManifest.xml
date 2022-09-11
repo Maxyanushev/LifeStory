@@ -15,8 +15,14 @@
         android:theme="@style/Theme.Nana"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".login.LoginActivity"
-            android:exported="false" />
+            android:name=".login.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".chat.ChatActivity"
             android:exported="false"
@@ -24,7 +30,9 @@
             android:theme="@style/Theme.Nana.NoActionBar" />
         <activity
             android:name=".SelectedActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="SelectedActivity"
+            android:theme="@style/Theme.Nana" />
         <activity
             android:name=".publication.PublicationActivity"
             android:exported="false"
@@ -37,13 +45,14 @@
             android:theme="@style/Theme.Nana" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false"
+            android:label="MainActivity"
+            android:theme="@style/Theme.Nana" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false"
+            android:label="LoginActivity"
+            android:theme="@style/Theme.Nana">
         </activity>
     </application>
-
 </manifest>

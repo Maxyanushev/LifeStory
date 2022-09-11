@@ -54,6 +54,8 @@
             <string name="memory_usage">Использование памяти</string>
             <string name="data_and_multimedia">Данные и мультимедия</string>
 
+            <string name="registration">Регистрация</string>
+
         <!-- For Post -->
             <string name="hashtags_of_post">#парк #природа #харьков</string>
             <string name="title_of_post">Черепаха в парке</string>
@@ -71,10 +73,19 @@
             <string name="account">Аккаунт</string>
             <string name="messages">Сообщения</string>
             <string name="language">Язык</string>
+            <string name="username">Имя пользователя</string>
+            <string name="email">Электронная почта</string>
+            <string name="password">Пароль</string>
+            <string name="login">Войти</string>
+            <string name="register">Зарегестрироваться</string>
 
         <!-- Warnings And Messages -->
             <string name="empty_profile">Упс! \nПохоже здесь пусто!</string>
             <string name="in_developing">В разработке!</string>
+            <string name="already_have_an_account">Уже есть аккаунт? Войдите!</string>
+            <string name="do_not_have_an_account">Нет аккаунта? Зарегистрируйся!</string>
+            <string name="or_login_with">Или войти с помощью</string>
+            <string name="or_register_with">Или зарегистрируйтесь с помощью</string>
 
     <!-- Test Text -->
         <string name="large_text">

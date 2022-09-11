@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "767279768100",
+    "firebase_url": "https://nana-338be-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "nana-338be",
+    "storage_bucket": "nana-338be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767279768100:android:f9d785a7b70e5a12ac6eb1",
+        "android_client_info": {
+          "package_name": "com.example.nana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767279768100-tvvhs4jpshm393fn7o53neulp2mthjmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHrnOSHiuBfZL4fIR-hMOKdjImD0-zJ24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767279768100-tvvhs4jpshm393fn7o53neulp2mthjmb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

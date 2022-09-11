@@ -70,6 +70,8 @@
     <string name="personal">Personal</string>
     <string name="groups">Groups</string>
 
+    <string name="registration">Registration</string>
+
     <!-- Special -->
     <string name="point" translatable="false">·</string>
 
@@ -92,6 +94,13 @@
     <string name="enter_text">Enter text</string>
     <string name="edit_profile">Edit Profile</string>
 
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
     <!-- Numbers -->
     <string name="one_hundred" translatable="false">100</string>
     <string name="ten_thousand" translatable="false">10 000</string>
@@ -102,6 +111,10 @@
     <!-- Warnings And Messages -->
     <string name="empty_profile">Oops! \nLooks like it\'s empty!</string>
     <string name="in_developing">In Developing!</string>
+    <string name="already_have_an_account">Already have an account? Sign in!</string>
+    <string name="do_not_have_an_account">Don\'t have an account? Register!</string>
+    <string name="or_login_with">Or login with</string>
+    <string name="or_register_with">Or register with</string>
 
     <!-- Test Text -->
     <string name="large_text">

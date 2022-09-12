@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.Nana" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#00BFFF</item>
-        <item name="colorPrimaryVariant">#00BFFF</item>
+        <item name="colorPrimary">#0295DB</item>
+        <item name="colorPrimaryVariant">#0295DB</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#00BFFF</item>
-        <item name="colorSecondaryVariant">#00BFFF</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">#0295DB</item>
+        <item name="colorSecondaryVariant">#0295DB</item>
+        <item name="colorOnSecondary">#0B0E1B</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

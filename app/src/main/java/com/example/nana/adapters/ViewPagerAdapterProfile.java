@@ -7,9 +7,9 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.nana.ui.profile.fragments.PostsFragment;
 import com.example.nana.ui.profile.fragments.SavesFragment;
 
-public class ViewPagerAdapter extends FragmentStateAdapter {
+public class ViewPagerAdapterProfile extends FragmentStateAdapter {
 
-    public ViewPagerAdapter(@NonNull Fragment fragment) {
+    public ViewPagerAdapterProfile(@NonNull Fragment fragment) {
         super(fragment);
     }
 

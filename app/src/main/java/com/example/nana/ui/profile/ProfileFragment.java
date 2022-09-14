@@ -12,14 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nana.R;
-import com.example.nana.adapters.ViewPagerAdapter;
+import com.example.nana.adapters.ViewPagerAdapterProfile;
 import com.example.nana.core.BaseFragment;
 import com.example.nana.databinding.FragmentProfileBinding;
 import com.example.nana.login.LoginActivity;
 import com.example.nana.ui.profile.fragments.PostsFragment;
 import com.example.nana.ui.profile.fragments.SavesFragment;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends BaseFragment {
 
@@ -48,7 +47,7 @@ public class ProfileFragment extends BaseFragment {
 
         root = binding.getRoot();
 
-        binding.viewPager2.setAdapter(new ViewPagerAdapter(this));
+        binding.viewPager2.setAdapter(new ViewPagerAdapterProfile(this));
         binding.tabLayout.setTabIconTint(null);
 
         new TabLayoutMediator(binding.tabLayout, binding.viewPager2,
@@ -64,9 +63,9 @@ public class ProfileFragment extends BaseFragment {
 
         binding.backButton.setOnClickListener(v -> requireActivity().onBackPressed());
         binding.buttonExit.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(requireActivity(), LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP));
-            requireActivity().finish();
+//            FirebaseAuth.getInstance().signOut();
+//            startActivity(new Intent(requireActivity(), LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP));
+//            requireActivity().finish();
         });
 
         return root;

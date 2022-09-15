@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.nana.chat.fragments.GroupChatsFragment;
-import com.example.nana.chat.fragments.PersonalChatsFragment;
+import com.example.nana.fragments.chats.GroupChatsFragment;
+import com.example.nana.fragments.chats.PersonalChatsFragment;
 
 public class ViewPagerAdapterChats extends FragmentStateAdapter {
 

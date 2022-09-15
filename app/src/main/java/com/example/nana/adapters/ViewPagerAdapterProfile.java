@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.nana.ui.profile.fragments.PostsFragment;
-import com.example.nana.ui.profile.fragments.SavesFragment;
+import com.example.nana.fragments.navigation.drawer.profile.fragments.PostsFragment;
+import com.example.nana.fragments.navigation.drawer.profile.fragments.SavesFragment;
 
 public class ViewPagerAdapterProfile extends FragmentStateAdapter {
 

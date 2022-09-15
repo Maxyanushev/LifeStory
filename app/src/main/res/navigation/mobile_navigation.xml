@@ -7,43 +7,43 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.nana.ui.profile.ProfileFragment"
+        android:name="com.example.nana.fragments.navigation.drawer.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_history"
-        android:name="com.example.nana.ui.history.HistoryFragment"
+        android:name="com.example.nana.fragments.navigation.drawer.history.HistoryFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/nav_news"
-        android:name="com.example.nana.ui.news.NewsFragment"
+        android:name="com.example.nana.fragments.navigation.drawer.news.NewsFragment"
         android:label="@string/menu_news"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/nav_replenishment"
-        android:name="com.example.nana.ui.replenishment.ReplenishmentFragment"
+        android:name="com.example.nana.fragments.navigation.drawer.replenishment.ReplenishmentFragment"
         android:label="@string/menu_replenishment"
         tools:layout="@layout/fragment_replenishment" />
 
     <fragment
         android:id="@+id/nav_support"
-        android:name="com.example.nana.ui.support.SupportFragment"
+        android:name="com.example.nana.fragments.navigation.drawer.support.SupportFragment"
         android:label="@string/menu_support"
         tools:layout="@layout/fragment_support" />
 
     <fragment
         android:id="@+id/nav_instruction"
-        android:name="com.example.nana.ui.instruction.InstructionFragment"
+        android:name="com.example.nana.fragments.navigation.drawer.instruction.InstructionFragment"
         android:label="@string/menu_instruction"
         tools:layout="@layout/fragment_instruction" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.nana.ui.settings.SettingsFragment"
+        android:name="com.example.nana.fragments.navigation.drawer.settings.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 

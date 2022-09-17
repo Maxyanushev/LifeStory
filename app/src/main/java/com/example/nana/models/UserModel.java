@@ -1,16 +1,24 @@
 package com.example.nana.models;
 
-public class User {
+public class UserModel {
 
-    private String username;
-    private String email;
+    private String username, email, profilePic;
 
-    public User() {
+    public UserModel() {
     }
 
-    public User(String username, String email) {
+    public UserModel(String username, String email, String profilePic) {
         this.username = username;
         this.email = email;
+        this.profilePic = profilePic;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 
     public String getUsername() {

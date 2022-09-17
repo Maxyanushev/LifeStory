@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nana.R;
-import com.example.nana.models.User;
+import com.example.nana.models.UserModel;
 import com.example.nana.databinding.ActivityLoginBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                 .createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                 .addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                FirebaseDatabase.getInstance().getReference("user/" + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(new User(username.getText().toString(), email.getText().toString()));
+                FirebaseDatabase.getInstance().getReference("user/" + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(new UserModel(username.getText().toString(), email.getText().toString(), ""));
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 Toast.makeText(LoginActivity.this, "Регистрация прошла успешно!", Toast.LENGTH_LONG).show();
             } else {

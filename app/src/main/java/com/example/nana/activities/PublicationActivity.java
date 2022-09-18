@@ -3,13 +3,12 @@ package com.example.nana.activities;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.nana.R;
+import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityPublicationBinding;
 import com.example.nana.fragments.publication.PublicationFragment;
 
-public class PublicationActivity extends AppCompatActivity {
+public class PublicationActivity extends BaseActivity {
 
     public ActivityPublicationBinding binding;
     public PublicationFragment publicationFragment = new PublicationFragment();
@@ -34,9 +33,6 @@ public class PublicationActivity extends AppCompatActivity {
 
     public void initListeners() {
         binding.btnBack.setOnClickListener(v -> onBackPressed());
-        binding.btnHelp.setOnClickListener(v -> {
-            Intent intent = new Intent(this, DetailPublicationActivity.class);
-            startActivity(intent);
-        });
+        binding.btnHelp.setOnClickListener(v -> startActivity(new Intent(this, DetailPublicationActivity.class)));
     }
 }

@@ -43,7 +43,6 @@ public class DetailPublicationActivity extends BaseActivity {
     }
 
     public void newPublication() {
-        Intent intent = new Intent(this, PublicationActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, PublicationActivity.class));
     }
 }

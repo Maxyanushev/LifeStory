@@ -15,8 +15,6 @@ public class ReplenishmentFragment extends BaseFragment {
     private FragmentReplenishmentBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        ReplenishmentViewModel replenishmentViewModel = new ViewModelProvider(this).get(ReplenishmentViewModel.class);
-
         binding = FragmentReplenishmentBinding.inflate(inflater, container, false);
 
         return binding.getRoot();

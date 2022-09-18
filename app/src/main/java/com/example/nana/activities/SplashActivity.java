@@ -1,17 +1,15 @@
 package com.example.nana.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.nana.databinding.ActivityLoginBinding;
+import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivitySplashBinding;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
-    ActivitySplashBinding binding;
+    public ActivitySplashBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

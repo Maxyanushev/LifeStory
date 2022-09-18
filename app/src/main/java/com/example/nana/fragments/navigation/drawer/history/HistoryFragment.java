@@ -15,8 +15,6 @@ public class HistoryFragment extends BaseFragment {
     private FragmentHistoryBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        HistoryViewModel historyViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
-
         binding = FragmentHistoryBinding.inflate(inflater, container, false);
 
         return binding.getRoot();

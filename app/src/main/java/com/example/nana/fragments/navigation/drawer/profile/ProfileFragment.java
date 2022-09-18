@@ -35,9 +35,7 @@ public class ProfileFragment extends BaseFragment {
         toolbar = toolbarVisibility;
     }
 
-    public ProfileFragment() {
-
-    }
+    public ProfileFragment() {}
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);

@@ -8,7 +8,7 @@
     tools:context=".activities.MessagesActivity">
 
     <EditText
-        android:id="@+id/editMassage"
+        android:id="@+id/editMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#706df2"
@@ -22,18 +22,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editMassage"
-        app:layout_constraintTop_toTopOf="@+id/editMassage"
+        app:layout_constraintEnd_toEndOf="@+id/editMessage"
+        app:layout_constraintTop_toTopOf="@+id/editMessage"
         app:srcCompat="@drawable/ic_send"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -42,20 +44,22 @@
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editMassage"
+        app:layout_constraintTop_toTopOf="@+id/editMessage"
         app:srcCompat="@drawable/ic_emoji"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imgSend"
+        app:layout_constraintEnd_toStartOf="@+id/imgSend"
+        app:layout_constraintTop_toTopOf="@+id/imgSend"
         app:srcCompat="@drawable/ic_media"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/todo" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerMessages"
@@ -67,7 +71,7 @@
         android:layout_marginBottom="4dp"
         android:background="#9492f0"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editMassage"
+        app:layout_constraintBottom_toTopOf="@+id/editMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +96,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_info" />
+            app:srcCompat="@drawable/ic_info"
+            android:contentDescription="@string/todo" />
 
         <ImageView
             android:id="@+id/imageView16"
@@ -102,7 +107,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_back" />
+            app:srcCompat="@drawable/ic_back"
+            android:contentDescription="@string/todo" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgToolbar"
@@ -129,11 +135,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="offline"
+            android:text="@string/offline"
             android:textSize="@dimen/dimen_10"
             android:textColor="#fa0238"
             app:layout_constraintStart_toStartOf="@+id/txtChattingWith"
-            app:layout_constraintTop_toBottomOf="@+id/txtChattingWith" />
+            app:layout_constraintTop_toBottomOf="@+id/txtChattingWith"
+            tools:ignore="SpUsage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,8 +15,6 @@ public class InstructionFragment extends BaseFragment {
     private FragmentInstructionBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        InstructionViewModel instructionViewModel = new ViewModelProvider(this).get(InstructionViewModel.class);
-
         binding = FragmentInstructionBinding.inflate(inflater, container, false);
 
         return binding.getRoot();

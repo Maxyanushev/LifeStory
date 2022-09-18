@@ -15,8 +15,6 @@ public class NewsFragment extends BaseFragment {
     private FragmentNewsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        NewsViewModel newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
-
         binding = FragmentNewsBinding.inflate(inflater, container, false);
 
         return binding.getRoot();

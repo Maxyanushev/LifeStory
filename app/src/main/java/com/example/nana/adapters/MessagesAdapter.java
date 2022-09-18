@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MessageHolder> {
 
-    ArrayList<MessageModel> messages;
+    public ArrayList<MessageModel> messages;
     private final String senderImg, receiverImg;
     private final Context context;
 

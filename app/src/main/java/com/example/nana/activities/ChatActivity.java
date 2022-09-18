@@ -1,7 +1,6 @@
 package com.example.nana.activities;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -10,8 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.nana.R;
 import com.example.nana.adapters.UsersAdapter;
+import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityChatBinding;
 import com.example.nana.models.UserModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,27 +22,39 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends BaseActivity {
 
-    ActivityChatBinding binding;
+    public ActivityChatBinding binding;
+
+    private UsersAdapter usersAdapter;
+    public UsersAdapter.OnUserClickListener onUserClickListener;
 
     private RecyclerView recyclerView;
-    private ArrayList<UserModel> users;
-    private UsersAdapter usersAdapter;
-    UsersAdapter.OnUserClickListener onUserClickListener;
     private SwipeRefreshLayout swipeLayout;
-    String myImageUrl;
+
+    private ArrayList<UserModel> users;
+    public String myImageUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        init();
+        initListeners();
+    }
+
+    public void init() {
         binding = ActivityChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         users = new ArrayList<>();
-        recyclerView = findViewById(R.id.recyclerView);
-        swipeLayout = findViewById(R.id.swipeLayout);
+        recyclerView = binding.recyclerView;
+        swipeLayout = binding.swipeLayout;
 
+        getUsers();
+    }
+
+    public void initListeners() {
         swipeLayout.setOnRefreshListener(() -> {
             getUsers();
             swipeLayout.setRefreshing(false);
@@ -53,8 +64,6 @@ public class ChatActivity extends AppCompatActivity {
                 .putExtra("username_of_roommate", users.get(position).getUsername())
                 .putExtra("email_of_roommate", users.get(position).getEmail())
                 .putExtra("image_of_roommate", users.get(position).getProfilePic()));
-
-        getUsers();
     }
 
     private void getUsers() {

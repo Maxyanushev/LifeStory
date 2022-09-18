@@ -1,7 +1,5 @@
 package com.example.nana.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nana.R;
+import com.example.nana.core.BaseActivity;
 import com.example.nana.models.UserModel;
 import com.example.nana.databinding.ActivityLoginBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,14 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
-    ActivityLoginBinding binding;
+    public ActivityLoginBinding binding;
 
-    EditText username, email, password;
-    TextView loginTitle, changeTypeOfAuth, registerTypes;
-    Button buttonLogin;
-    ImageView google, facebook, twitter;
+    private EditText username, email, password;
+    private TextView loginTitle, changeTypeOfAuth, registerTypes;
+    private Button buttonLogin;
+    public ImageView google, facebook, twitter;
 
     private boolean isSigningUp = true;
 

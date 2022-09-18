@@ -15,8 +15,6 @@ public class SupportFragment extends BaseFragment {
     private FragmentSupportBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        SupportViewModel supportViewModel = new ViewModelProvider(this).get(SupportViewModel.class);
-
         binding = FragmentSupportBinding.inflate(inflater, container, false);
 
         return binding.getRoot();

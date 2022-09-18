@@ -70,7 +70,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     protected void onResume() {
         super.onResume();
-
         replaceFragment(new FeedFragment());
     }
 
@@ -114,7 +113,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             Intent intent = new Intent(this, ChatActivity.class);
             startActivity(intent);
         });
-//        binding.appBarMain.imageButton.setOnClickListener(v -> replaceActivity(ChatActivity.class));
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -153,7 +151,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -212,7 +209,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
     public void replaceActivity(Class activity) {
-        Intent intent = new Intent(this, activity);
-        startActivity(intent);
+        startActivity(new Intent(this, activity));
     }
 }

@@ -18,9 +18,9 @@ import java.util.ArrayList;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder> {
 
-    private ArrayList<UserModel> users;
-    private Context context;
-    private OnUserClickListener onUserClickListener;
+    private final ArrayList<UserModel> users;
+    private final Context context;
+    private final OnUserClickListener onUserClickListener;
 
     public UsersAdapter(ArrayList<UserModel> users, Context context, OnUserClickListener onUserClickListener) {
         this.users = users;
@@ -62,9 +62,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder> 
         public UserHolder(@NonNull View itemView) {
             super(itemView);
 
-            itemView.setOnClickListener(v -> {
-                onUserClickListener.onUserClick(getAdapterPosition());
-            });
+            itemView.setOnClickListener(v -> onUserClickListener.onUserClick(getAdapterPosition()));
 
             txtUsername = itemView.findViewById(R.id.txtUsername);
             img_pro = itemView.findViewById(R.id.imgPro);

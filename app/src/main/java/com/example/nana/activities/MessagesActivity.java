@@ -1,18 +1,19 @@
-package com.example.nana;
+package com.example.nana.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.nana.R;
 import com.example.nana.adapters.MessagesAdapter;
 import com.example.nana.models.MessageModel;
 import com.example.nana.models.UserModel;
@@ -23,13 +24,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MessagesActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     EditText editMassageInput;
     TextView txtMassageWith;
-    ProgressBar progressBar;
 
     ArrayList<MessageModel> massages;
     ImageView imgToolbar, imgSend;
@@ -56,14 +57,14 @@ public class MessagesActivity extends AppCompatActivity {
         massages = new ArrayList<>();
 
         imgSend.setOnClickListener(v -> {
-            FirebaseDatabase.getInstance().getReference("massages/" + chatRoomId).push().setValue(new MessageModel(FirebaseAuth.getInstance().getCurrentUser().getEmail(), emailOfRoommate, editMassageInput.getText().toString()));
+            FirebaseDatabase.getInstance().getReference("massages/" + chatRoomId).push().setValue(new MessageModel(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail(), emailOfRoommate, editMassageInput.getText().toString()));
             editMassageInput.setText("");
         });
 
         massageAdapter = new MessagesAdapter(massages, getIntent().getStringExtra("my_img"), getIntent().getStringExtra("img_of_roommate"), MessagesActivity.this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(massageAdapter);
-        Glide.with(MessagesActivity.this).load(getIntent().getStringExtra("img_of_roommate")).placeholder(R.drawable.ic_main_lumic).error(R.drawable.ic_main_lumic).into(imgToolbar);
+        Glide.with(MessagesActivity.this).load(getIntent().getStringExtra("img_of_roommate")).placeholder(R.drawable.test_img).error(R.drawable.test_img).into(imgToolbar);
 
         setUpChatRoom();
     }
@@ -73,7 +74,7 @@ public class MessagesActivity extends AppCompatActivity {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String myUserName = snapshot.getValue(UserModel.class).getUsername();
+                        String myUserName = Objects.requireNonNull(snapshot.getValue(UserModel.class)).getUsername();
                         if (usernameOfTheRoommate.compareTo(myUserName) > 0) {
                             chatRoomId = myUserName + usernameOfTheRoommate;
                         } else if (usernameOfTheRoommate.compareTo(myUserName) == 0) {
@@ -93,6 +94,7 @@ public class MessagesActivity extends AppCompatActivity {
 
     private void attachMassageListener(String chatRoomId) {
         FirebaseDatabase.getInstance().getReference("massages/" + chatRoomId).addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 massages.clear();

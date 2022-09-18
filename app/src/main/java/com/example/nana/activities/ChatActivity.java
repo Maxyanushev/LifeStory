@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.nana.MessagesActivity;
 import com.example.nana.R;
 import com.example.nana.adapters.UsersAdapter;
 import com.example.nana.databinding.ActivityChatBinding;
@@ -22,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -44,23 +44,15 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         swipeLayout = findViewById(R.id.swipeLayout);
 
-        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                getUsers();
-                swipeLayout.setRefreshing(false);
-            }
+        swipeLayout.setOnRefreshListener(() -> {
+            getUsers();
+            swipeLayout.setRefreshing(false);
         });
 
-        onUserClickListener = new UsersAdapter.OnUserClickListener() {
-            @Override
-            public void onUserClick(int position) {
-                startActivity(new Intent(ChatActivity.this, MessagesActivity.class)
-                        .putExtra("username_of_roommate", users.get(position).getUsername())
-                        .putExtra("email_of_roommate", users.get(position).getEmail())
-                        .putExtra("image_of_roommate", users.get(position).getProfilePic()));
-            }
-        };
+        onUserClickListener = position -> startActivity(new Intent(ChatActivity.this, MessagesActivity.class)
+                .putExtra("username_of_roommate", users.get(position).getUsername())
+                .putExtra("email_of_roommate", users.get(position).getEmail())
+                .putExtra("image_of_roommate", users.get(position).getProfilePic()));
 
         getUsers();
     }
@@ -79,7 +71,7 @@ public class ChatActivity extends AppCompatActivity {
                 recyclerView.setVisibility(View.VISIBLE);
 
                 for (UserModel user: users) {
-                    if (user.getEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+                    if (user.getEmail().equals(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail())) {
                         myImageUrl = user.getProfilePic();
                         return;
                     }

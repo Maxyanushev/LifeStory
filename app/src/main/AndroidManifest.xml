@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Nana"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".MessagesActivity"
+            android:name=".activities.MessagesActivity"
             android:exported="false"
             android:label="MainActivity"
             android:theme="@style/Theme.Nana"/>

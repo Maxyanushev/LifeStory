@@ -79,7 +79,7 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-v26/fragment_profile.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1884203480589023" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.21618852459016394" />
-        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_chat.xml" value="0.536" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_chat.xml" value="0.264" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_detail_publication.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_documentation.xml" value="0.2866847826086957" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/activity_issue.xml" value="0.25" />
@@ -131,7 +131,7 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_splash.xml" value="0.1125" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_studies.xml" value="0.2753623188405797" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_support.xml" value="0.19293478260869565" />
-        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/holder_chat_user.xml" value="0.536" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/holder_chat_user.xml" value="0.4" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/holder_message.xml" value="0.2734375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/item_developing_alert.xml" value="0.536" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/item_publication.xml" value="0.4" />

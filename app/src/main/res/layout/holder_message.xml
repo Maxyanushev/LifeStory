@@ -22,7 +22,7 @@
             android:backgroundTint="#cc34eb"
             android:maxWidth="250dp"
             android:padding="8dp"
-            android:text="Здесь написан небольшой текст!"
+            android:text="@string/small_text"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />

@@ -207,4 +207,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="last_message">Last Message</string>
+    <string name="offline">offline</string>
+    <string name="small_text">Здесь написан небольшой текст!</string>
 </resources>

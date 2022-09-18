@@ -13,7 +13,8 @@
             android:layout_gravity="center"
             android:background="#2C45FF"
             android:gravity="center|left"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="RtlHardcoded,UselessParent">
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/button_auto"

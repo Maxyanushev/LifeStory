@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="360dp"
-        android:text="Nana"
+        android:text="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cardView12"
         app:layout_constraintStart_toStartOf="@+id/cardView12" />
@@ -30,7 +30,8 @@
             android:id="@+id/imageView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_icon_round" />
+            app:srcCompat="@mipmap/ic_icon_round"
+            android:contentDescription="@string/todo" />
 
     </androidx.cardview.widget.CardView>
 

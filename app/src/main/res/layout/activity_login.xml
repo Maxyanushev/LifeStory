@@ -57,7 +57,8 @@
                 android:padding="@dimen/dimen_16"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                tools:targetApi="m" />
+                tools:targetApi="m"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/editEmail"
@@ -73,7 +74,8 @@
                 android:padding="@dimen/dimen_16"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                tools:targetApi="m" />
+                tools:targetApi="m"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/editPassword"
@@ -90,7 +92,8 @@
                 android:layout_marginTop="@dimen/dimen_16"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                tools:targetApi="m" />
+                tools:targetApi="m"
+                android:autofillHints="" />
 
         </LinearLayout>
 
@@ -121,7 +124,7 @@
             android:id="@+id/textRegisterTypes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Or register with"
+            android:text="@string/or_register_with"
             android:textColor="@color/grey"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -143,21 +146,24 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="@dimen/dimen_20"
-                android:src="@drawable/google" />
+                android:src="@drawable/google"
+                android:contentDescription="@string/todo" />
 
             <ImageView
                 android:id="@+id/facebook"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="@dimen/dimen_20"
-                android:src="@drawable/facebook" />
+                android:src="@drawable/facebook"
+                android:contentDescription="@string/todo" />
 
             <ImageView
                 android:id="@+id/twitter"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="@dimen/dimen_20"
-                android:src="@drawable/twitter" />
+                android:src="@drawable/twitter"
+                android:contentDescription="@string/todo" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

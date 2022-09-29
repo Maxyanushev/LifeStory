@@ -25,11 +25,13 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_help_publication.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_help_white.xml" value="0.279" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_home.xml" value="0.2495" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_info.xml" value="0.2315" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_language.xml" value="0.273" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_launcher_background.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_link.xml" value="0.279" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_link_black.xml" value="0.279" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_lock.xml" value="0.273" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_logout.xml" value="0.2315" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_massages.xml" value="0.273" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_media.xml" value="0.279" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_menu_anime.xml" value="0.309375" />
@@ -61,6 +63,7 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_publication_help.xml" value="0.309375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_save.xml" value="0.279" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_search.xml" value="0.273" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_send.xml" value="0.2315" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_share.xml" value="0.273" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/ic_system_help.xml" value="0.290625" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/drawable/item_autocolor_mode.xml" value="0.268" />
@@ -112,7 +115,7 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_music.xml" value="0.27943840579710144" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_news.xml" value="0.19293478260869565" />
-        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_notification.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_notification.xml" value="0.4" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_personal_chats.xml" value="0.19202898550724637" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_posts.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/fragment_preview_publication.xml" value="0.4" />
@@ -134,6 +137,7 @@
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/holder_chat_user.xml" value="0.4" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/holder_message.xml" value="0.2734375" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/item_developing_alert.xml" value="0.536" />
+        <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/item_notification.xml" value="0.4" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/item_publication.xml" value="0.4" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/layout_switch_color_mode.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/Max/AndroidStudioProjects/LifeStory/app/src/main/res/layout/messages_layout.xml" value="0.25271739130434784" />

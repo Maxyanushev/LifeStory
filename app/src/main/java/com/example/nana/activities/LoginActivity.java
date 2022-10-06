@@ -2,6 +2,9 @@ package com.example.nana.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,16 +30,12 @@ public class LoginActivity extends BaseActivity {
     private Button buttonLogin;
     public ImageView google, facebook, twitter;
 
-    private boolean isSigningUp = true;
+    private boolean isSigningUp = true, isPasswordVisible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
-        }
+        checkEntered();
 
         init();
         initListeners();
@@ -64,17 +63,21 @@ public class LoginActivity extends BaseActivity {
     private void initListeners() {
         buttonLogin.setOnClickListener(v -> {
             if (isSigningUp) {
-                if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty() || username.getText().toString().isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Что-то не ввели...", Toast.LENGTH_LONG).show();
-                } else {
-                    handleRegister();
-                }
+                if (email.getText().toString().isEmpty()) {
+                    email.setError("Ой-Ой! Похоже Email обязательно нужно ввести!");
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
+                    Toast.makeText(this, "Проверьте правильность написания Email!", Toast.LENGTH_SHORT).show();
+                } else if (password.getText().toString().isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Если хотите остаться без аккаунта, то пароль можно и не вводить :)", Toast.LENGTH_LONG).show();
+                } else if (username.getText().toString().isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "А как же имя пользователя? Его стоит ввести!", Toast.LENGTH_LONG).show();
+                } else { handleRegister(); }
             } else {
-                if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Что-то не ввели...", Toast.LENGTH_LONG).show();
-                } else {
-                    handleLogin();
-                }
+                if (email.getText().toString().isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Ой-Ой! Похоже электронную почту обязательно нужно ввести!", Toast.LENGTH_LONG).show();
+                } else if (password.getText().toString().isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Эй! А пароль? Без пароля не впущу!", Toast.LENGTH_LONG).show();
+                } else { handleLogin(); }
             }
         });
 
@@ -99,6 +102,18 @@ public class LoginActivity extends BaseActivity {
                 registerTypes.setText(R.string.or_register_with);
             }
         });
+
+        binding.buttonShowHide.setOnClickListener(v -> {
+            if (isPasswordVisible) {
+                binding.editPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                binding.buttonShowHide.setImageResource(R.drawable.eye_hide);
+                isPasswordVisible = false;
+            } else {
+                binding.editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                binding.buttonShowHide.setImageResource(R.drawable.eye_show);
+                isPasswordVisible = true;
+            }
+        });
     }
 
     private void handleRegister() {
@@ -108,7 +123,6 @@ public class LoginActivity extends BaseActivity {
             if (task.isSuccessful()) {
                 FirebaseDatabase.getInstance().getReference("user/" + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(new UserModel(username.getText().toString(), email.getText().toString(), ""));
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                Toast.makeText(LoginActivity.this, "Регистрация прошла успешно!", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
@@ -126,5 +140,12 @@ public class LoginActivity extends BaseActivity {
                 Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void checkEntered() {
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
     }
 }

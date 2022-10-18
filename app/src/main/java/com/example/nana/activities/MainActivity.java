@@ -35,9 +35,16 @@ import com.example.nana.fragments.navigation.drawer.profile.ProfileFragment;
 import com.example.nana.fragments.navigation.drawer.replenishment.ReplenishmentFragment;
 import com.example.nana.fragments.navigation.drawer.settings.SettingsFragment;
 import com.example.nana.fragments.navigation.drawer.support.SupportFragment;
+import com.example.nana.models.UserModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -50,14 +57,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public BottomNavigationView bottomNavigationView;
 
     public View navHeader;
-    public FloatingActionButton fab;
 
     public SharedPreferences.Editor editor;
     public SharedPreferences wmbPreference;
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch onlineStatus;
-    private TextView onlineStatusText;
+    private TextView onlineStatusText, usernameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,16 +96,26 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         onlineStatus = navHeader.findViewById(R.id.online_status);
         onlineStatusText = navHeader.findViewById(R.id.online_status_text);
 
+        // put the username in the sidebar name field
+        usernameText = navHeader.findViewById(R.id.name_text);
+        FirebaseDatabase.getInstance().getReference("user/" + FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        usernameText.setText(Objects.requireNonNull(snapshot.getValue(UserModel.class)).getUsername());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
         replaceFragment(new FeedFragment());
         bottomNavigationView.setBackground(null);
-        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
-        fab = findViewById(R.id.bottom_navigation_fab);
     }
 
     @SuppressLint("NonConstantResourceId")
     public void initListeners() {
-        fab.setOnClickListener(v -> newDetailPost());
-
         onlineStatus.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 onlineStatusText.setText(R.string.online_status_on);
@@ -122,6 +138,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
                 case R.id.search:
                     replaceFragment(new SearchFragment());
+                    break;
+
+                case R.id.add:
+                    newDetailPost();
                     break;
 
                 case R.id.notification:

@@ -10,7 +10,8 @@
         android:title="@string/search"/>
     <item
         android:id="@+id/add"
-        android:title=""/>
+        android:icon="@drawable/ic_plus"
+        android:title="Создать"/>
     <item
         android:id="@+id/notification"
         android:icon="@drawable/ic_notification"

@@ -115,7 +115,7 @@
                                 android:layout_marginEnd="16dp"
                                 android:layout_marginBottom="48dp"
                                 android:text="@string/account"
-                                android:textSize="20sp"
+                                android:textSize="15sp"
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +126,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="48dp"
+                            android:layout_marginTop="36dp"
                             android:layout_marginEnd="16dp"
                             app:cardBackgroundColor="#007FFF"
                             app:cardCornerRadius="20dp"
@@ -255,7 +255,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="48dp"
+                            android:layout_marginTop="36dp"
                             android:layout_marginEnd="16dp"
                             app:cardBackgroundColor="#007FFF"
                             app:cardCornerRadius="20dp"
@@ -275,11 +275,11 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@color/transparent"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView20"
                                     app:layout_constraintEnd_toEndOf="@+id/imageButton1"
                                     app:layout_constraintTop_toTopOf="@+id/textView20"
-                                    app:srcCompat="@drawable/ic_arrow_right"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_arrow_right" />
 
                                 <ImageButton
                                     android:id="@+id/imageButton100"
@@ -288,10 +288,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
                                     android:background="@color/transparent"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintStart_toStartOf="@+id/imageView999"
                                     app:layout_constraintTop_toBottomOf="@+id/imageView999"
-                                    app:srcCompat="@drawable/ic_massages"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_massages" />
 
                                 <TextView
                                     android:id="@+id/textView20"
@@ -309,8 +309,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="12dp"
-                                    android:track="@drawable/track"
                                     android:thumb="@drawable/thumb"
+                                    android:track="@drawable/track"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView17"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="@+id/textView17"
@@ -322,10 +322,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintStart_toStartOf="@+id/imageView1"
                                     app:layout_constraintTop_toBottomOf="@+id/imageView1"
-                                    app:srcCompat="@drawable/ic_notification_post"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_notification_post" />
 
                                 <TextView
                                     android:id="@+id/textView10"
@@ -345,11 +345,11 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@color/transparent"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView30"
                                     app:layout_constraintEnd_toEndOf="@+id/imageButton11"
                                     app:layout_constraintTop_toTopOf="@+id/textView30"
-                                    app:srcCompat="@drawable/ic_arrow_right"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_arrow_right" />
 
                                 <ImageView
                                     android:id="@+id/imageView1"
@@ -358,10 +358,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginTop="16dp"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/ic_notifications_off"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_notifications_off" />
 
                                 <TextView
                                     android:id="@+id/textView17"
@@ -394,11 +394,11 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:background="@color/transparent"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView10"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="@+id/textView10"
-                                    app:srcCompat="@drawable/ic_arrow_right"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_arrow_right" />
 
                                 <ImageView
                                     android:id="@+id/imageView9"
@@ -406,10 +406,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintStart_toStartOf="@+id/imageButton100"
                                     app:layout_constraintTop_toBottomOf="@+id/imageButton100"
-                                    app:srcCompat="@drawable/ic_avatar"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_avatar" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -433,7 +433,7 @@
                                 android:layout_marginEnd="16dp"
                                 android:layout_marginBottom="48dp"
                                 android:text="@string/notification"
-                                android:textSize="@dimen/dimen_20_text"
+                                android:textSize="15sp"
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -456,14 +456,14 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="48dp"
+                            android:layout_marginTop="36dp"
                             android:layout_marginEnd="16dp"
                             app:cardBackgroundColor="#007FFF"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="1dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="@+id/cardView10"
-                            app:layout_constraintTop_toTopOf="@+id/cardView10" >
+                            app:layout_constraintTop_toTopOf="@+id/cardView10">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
@@ -493,11 +493,11 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:background="@color/transparent"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView22"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="@+id/textView22"
-                                    app:srcCompat="@drawable/ic_arrow_right"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_arrow_right" />
 
                                 <ImageView
                                     android:id="@+id/imageView11"
@@ -505,10 +505,10 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintStart_toStartOf="@+id/imageView10"
                                     app:layout_constraintTop_toBottomOf="@+id/imageView10"
-                                    app:srcCompat="@drawable/ic_language"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_language" />
 
                                 <TextView
                                     android:id="@+id/textView21"
@@ -528,10 +528,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginTop="16dp"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/ic_palette"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_palette" />
 
                                 <TextView
                                     android:id="@+id/textView22"
@@ -566,7 +566,7 @@
                                 android:layout_marginEnd="16dp"
                                 android:layout_marginBottom="48dp"
                                 android:text="@string/appearance"
-                                android:textSize="@dimen/dimen_20_text"
+                                android:textSize="15sp"
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -589,7 +589,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="48dp"
+                            android:layout_marginTop="36dp"
                             android:layout_marginEnd="16dp"
                             android:layout_marginBottom="@dimen/dimen_16"
                             app:cardBackgroundColor="#007FFF"
@@ -612,11 +612,11 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
                                     android:background="@color/transparent"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintBottom_toBottomOf="@+id/textView23"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="@+id/textView23"
-                                    app:srcCompat="@drawable/ic_arrow_right"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_arrow_right" />
 
                                 <TextView
                                     android:id="@+id/textView23"
@@ -636,10 +636,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginTop="16dp"
+                                    android:contentDescription="@string/todo"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/ic_help"
-                                    android:contentDescription="@string/todo" />
+                                    app:srcCompat="@drawable/ic_help" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -661,9 +661,9 @@
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="16dp"
-                                android:layout_marginBottom="48dp"
+                                android:layout_marginBottom="56dp"
                                 android:text="@string/data_and_multimedia"
-                                android:textSize="@dimen/dimen_20_text"
+                                android:textSize="15sp"
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"

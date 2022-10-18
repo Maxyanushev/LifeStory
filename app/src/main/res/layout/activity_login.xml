@@ -5,6 +5,7 @@
     tools:context=".activities.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/splash_screen">
@@ -63,23 +64,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen_16"
+                android:autofillHints=""
                 android:background="#30ffffff"
                 android:drawableStart="@drawable/ic_menu_profile"
                 android:drawablePadding="@dimen/dimen_20"
                 android:drawableTint="@color/white"
+                android:elevation="-1dp"
                 android:hint="@string/username"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:inputType="textPersonName"
                 android:padding="@dimen/dimen_16"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                tools:targetApi="m"
-                android:autofillHints="" />
+                tools:targetApi="m" />
 
             <EditText
                 android:id="@+id/editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_16"
+                android:autofillHints=""
                 android:background="#30ffffff"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="@dimen/dimen_20"
@@ -89,8 +93,7 @@
                 android:padding="@dimen/dimen_16"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                tools:targetApi="m"
-                android:autofillHints="" />
+                tools:targetApi="m" />
 
             <EditText
                 android:id="@+id/editPassword"
@@ -101,6 +104,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:autofillHints=""
+                android:elevation="-1dp"
                 android:background="#30ffffff"
                 android:drawableStart="@drawable/ic_lock"
                 android:drawablePadding="@dimen/dimen_20"

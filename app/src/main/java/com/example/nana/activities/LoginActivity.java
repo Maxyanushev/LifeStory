@@ -2,12 +2,15 @@ package com.example.nana.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +31,7 @@ public class LoginActivity extends BaseActivity {
     private EditText username, email, password;
     private TextView loginTitle, changeTypeOfAuth, registerTypes;
     private Button buttonLogin;
+    private ImageButton buttonShowHide;
     public ImageView google, facebook, twitter;
 
     private boolean isSigningUp = true, isPasswordVisible = true;
@@ -54,6 +58,7 @@ public class LoginActivity extends BaseActivity {
         registerTypes = binding.textRegisterTypes;
 
         buttonLogin = binding.btnLogin;
+        buttonShowHide = binding.buttonShowHide;
 
         google = binding.google;
         facebook = binding.facebook;
@@ -63,20 +68,28 @@ public class LoginActivity extends BaseActivity {
     private void initListeners() {
         buttonLogin.setOnClickListener(v -> {
             if (isSigningUp) {
-                if (email.getText().toString().isEmpty()) {
+                if (username.getText().toString().isEmpty()) {
+                    username.setError("А как же имя пользователя? Его стоит ввести!");
+                } else if (username.getText().length() < 4 || username.getText().length() > 12) {
+                    username.setError("Имя пользователя должно содержать от 4 до 12 символов");
+                } else if (email.getText().toString().isEmpty()) {
                     email.setError("Ой-Ой! Похоже Email обязательно нужно ввести!");
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
-                    Toast.makeText(this, "Проверьте правильность написания Email!", Toast.LENGTH_SHORT).show();
+                    email.setError("Проверьте правильность написания Email!");
                 } else if (password.getText().toString().isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Если хотите остаться без аккаунта, то пароль можно и не вводить :)", Toast.LENGTH_LONG).show();
-                } else if (username.getText().toString().isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "А как же имя пользователя? Его стоит ввести!", Toast.LENGTH_LONG).show();
-                } else { handleRegister(); }
+                    password.setError("Если хотите остаться без аккаунта, то пароль можно и не вводить");
+                    buttonShowHide.setVisibility(View.GONE);
+                } else if (password.getText().length() < 6 || password.getText().length() > 15) {
+                    password.setError("Пароль должен содержать от 6 до 15 символов");
+                    buttonShowHide.setVisibility(View.GONE);
+                } else {
+                    handleRegister();
+                }
             } else {
                 if (email.getText().toString().isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Ой-Ой! Похоже электронную почту обязательно нужно ввести!", Toast.LENGTH_LONG).show();
+                    email.setError("Ой-Ой! Похоже электронную почту обязательно нужно ввести!");
                 } else if (password.getText().toString().isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Эй! А пароль? Без пароля не впущу!", Toast.LENGTH_LONG).show();
+                    password.setError("Эй! А пароль? Без пароля не впущу!");
                 } else { handleLogin(); }
             }
         });
@@ -112,6 +125,23 @@ public class LoginActivity extends BaseActivity {
                 binding.editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 binding.buttonShowHide.setImageResource(R.drawable.eye_show);
                 isPasswordVisible = true;
+            }
+        });
+
+        password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                buttonShowHide.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }

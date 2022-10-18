@@ -9,49 +9,19 @@
     tools:showIn="@layout/app_bar_main">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="15dp"
-        app:cardBackgroundColor="#00BFFF"
-        app:cardCornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="@+id/bottom_navigation_fab"
-        app:layout_constraintStart_toStartOf="@+id/bottom_navigation_fab" />
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         app:cardBackgroundColor="#00BFFF"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
-
-    </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/bottom_navigation_fab"
-        style="@style/Widget.Nana.Fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:contentDescription="@string/todo"
-        app:backgroundTint="@color/transparent"
-        app:borderWidth="1dp"
-        app:elevation="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
-        app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
-        app:srcCompat="@drawable/ic_plus"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/dimen_10"
-        app:elevation="@dimen/dimen_10"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

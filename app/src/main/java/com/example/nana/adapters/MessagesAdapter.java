@@ -1,90 +1,109 @@
 package com.example.nana.adapters;
 
-import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.bumptech.glide.Glide;
-import com.example.nana.R;
+import com.example.nana.databinding.HolderMessageBinding;
+import com.example.nana.databinding.HolderReceivedMessageBinding;
 import com.example.nana.models.MessageModel;
-import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.List;
 
-public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MessageHolder> {
+public class MessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public ArrayList<MessageModel> messages;
-    private final String senderImg, receiverImg;
-    private final Context context;
+    private final List<MessageModel> messageModels;
+    private Bitmap receiverProfileImage;
+    private final String senderId;
 
-    public MessagesAdapter(ArrayList<MessageModel> messages, String senderImg, String receiverImg, Context context) {
-        this.messages = messages;
-        this.senderImg = senderImg;
-        this.receiverImg = receiverImg;
-        this.context = context;
+    public static final int VIEW_TYPE_SEND = 1;
+    public static final int VIEW_TYPE_RECEIVED = 2;
+
+    public void setReceiverProfileImage(Bitmap bitmap) {
+        receiverProfileImage = bitmap;
+    }
+
+    public MessagesAdapter(List<MessageModel> messageModels, String senderId) {
+        this.messageModels = messageModels;
+        this.senderId = senderId;
     }
 
     @NonNull
     @Override
-    public MessageHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.holder_message, parent, false);
-        return new MessageHolder(view);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if (viewType == VIEW_TYPE_SEND) {
+            return new SendMessageHolder(
+                    HolderMessageBinding.inflate(
+                            LayoutInflater.from(parent.getContext()),
+                            parent,
+                            false
+                    )
+            );
+        } else {
+            return new ReceivedMessageHolder(
+                    HolderReceivedMessageBinding.inflate(
+                            LayoutInflater.from(parent.getContext()),
+                            parent,
+                            false
+                    ));
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MessageHolder holder, int position) {
-        holder.txtMessage.setText(messages.get(position).getContent());
-        ConstraintLayout constraintLayout = holder.ccLayout;
-
-        if (messages.get(position).getSender().equals(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail())) {
-            Glide.with(context).load(senderImg).error(R.drawable.test_img).placeholder(R.drawable.test_img).into(holder.profImage);
-            ConstraintSet constraintSet = new ConstraintSet();
-            constraintSet.clone(constraintLayout);
-            holder.txtMessage.setBackgroundResource(R.drawable.round_corners_receiver);
-            constraintSet.clear(R.id.small_profile_picture, ConstraintSet.LEFT);
-            constraintSet.clear(R.id.txtMassage, ConstraintSet.LEFT);
-            constraintSet.connect(R.id.small_profile_picture, ConstraintSet.RIGHT, R.id.ccLayout, ConstraintSet.RIGHT, 16);
-            constraintSet.connect(R.id.txtMassage, ConstraintSet.RIGHT, R.id.small_profile_picture, ConstraintSet.LEFT, 16);
-            constraintSet.applyTo(constraintLayout);
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if (getItemViewType(position) == VIEW_TYPE_SEND) {
+            ((SendMessageHolder) holder).setData(messageModels.get(position));
         } else {
-            Glide.with(context).load(receiverImg).error(R.drawable.test_img).placeholder(R.drawable.test_img).into(holder.profImage);
-            ConstraintSet constraintSet = new ConstraintSet();
-            constraintSet.clone(constraintLayout);
-            holder.txtMessage.setBackgroundResource(R.drawable.round_corners_sender);
-            constraintSet.clear(R.id.small_profile_picture, ConstraintSet.RIGHT);
-            constraintSet.clear(R.id.txtMassage, ConstraintSet.RIGHT);
-            constraintSet.connect(R.id.small_profile_picture, ConstraintSet.LEFT, R.id.ccLayout, ConstraintSet.LEFT, 16);
-            constraintSet.connect(R.id.txtMassage, ConstraintSet.LEFT, R.id.small_profile_picture, ConstraintSet.RIGHT, 16);
-            constraintSet.applyTo(constraintLayout);
+            ((ReceivedMessageHolder) holder).setData(messageModels.get(position));
         }
     }
 
     @Override
     public int getItemCount() {
-        return messages.size();
+        return messageModels.size();
     }
 
-    static class MessageHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemViewType(int position) {
+        if (messageModels.get(position).senderId.equals(senderId)) {
+            return VIEW_TYPE_SEND;
+        } else {
+            return VIEW_TYPE_RECEIVED;
+        }
+    }
 
-        ConstraintLayout ccLayout;
-        ImageView profImage;
-        TextView txtMessage;
+    static class SendMessageHolder extends RecyclerView.ViewHolder {
 
-        public MessageHolder(@NonNull View itemView) {
-            super(itemView);
+        private final HolderMessageBinding binding;
 
-            ccLayout = itemView.findViewById(R.id.ccLayout);
-            profImage = itemView.findViewById(R.id.small_profile_picture);
-            txtMessage = itemView.findViewById(R.id.txtMassage);
+        public SendMessageHolder(HolderMessageBinding holderMessageBinding) {
+            super(holderMessageBinding.getRoot());
+            binding = holderMessageBinding;
+        }
+
+        void setData(MessageModel messageModel) {
+            binding.textHolderMessage.setText(messageModel.message);
+            binding.textDataTime.setText(messageModel.dateTime);
+        }
+    }
+
+    static class ReceivedMessageHolder extends RecyclerView.ViewHolder {
+
+        private final HolderReceivedMessageBinding binding;
+
+        ReceivedMessageHolder(HolderReceivedMessageBinding holderReceivedMessageBinding) {
+            super(holderReceivedMessageBinding.getRoot());
+            binding = holderReceivedMessageBinding;
+        }
+
+        void setData(MessageModel messageModel) {
+            binding.textReceivedMessage.setText(messageModel.message);
+            binding.textDataTime.setText(messageModel.dateTime);
+//            if (receivedProfileImage != null) {
+//                binding.imageProfile.setImageBitmap(receivedProfileImage);
+//            }
         }
     }
 }

@@ -21,17 +21,19 @@
             android:id="@+id/cardView5"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:background="@color/primary"
+            app:cardCornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/primary">
 
                 <ImageButton
                     android:id="@+id/imageButton3"
-                    style="@style/Widget.Nana.ImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -45,7 +47,6 @@
 
                 <ImageButton
                     android:id="@+id/imageButton"
-                    style="@style/Widget.Nana.ImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -59,13 +60,13 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    style="@style/Widget.Nana.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textSize="@dimen/dimen_20_text"
                     android:textStyle="bold"
                     android:textAllCaps="true"
+                    android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

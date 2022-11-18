@@ -24,6 +24,8 @@
             <string name="online_status_off">Онлайн Статус: Викл</string>
             <string name="online_status_on">Онлайн Статус: Вкл</string>
 
+            <string name="online">Онлайн</string>
+
             <string name="reputation">Репутація</string>
             <string name="nana_coins">Nana-Монет</string>
 
@@ -182,4 +184,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
         <string name="small_text">Тут написано невеликий текст!</string>
+    <string name="welcome_to_nana">Welcome to Nana!</string>
+    <string name="create_new_account">Create new account</string>
 </resources>

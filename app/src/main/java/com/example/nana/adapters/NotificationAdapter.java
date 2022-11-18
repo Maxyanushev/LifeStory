@@ -11,11 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nana.R;
-import com.example.nana.models.UserModel;
-
-import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.NotificationHolder>{
 
@@ -45,7 +41,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     class NotificationHolder extends RecyclerView.ViewHolder {
 
         TextView textData, textName, textMessage, textClockTime;
-        CircleImageView imageView;
+        RoundedImageView imageView;
         ImageButton btnOptions;
         View viewLine;
 

@@ -39,6 +39,8 @@
     <string name="online_status_off">Online Status: Off</string>
     <string name="online_status_on">Online Status: On</string>
 
+    <string name="online">Online</string>
+
     <string name="reputation">Reputation</string>
     <string name="nana_coins">Nana-Coins</string>
 
@@ -209,4 +211,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="small_text">There\'s a little text here!</string>
+    <string name="welcome_to_nana">Welcome to Nana!</string>
+    <string name="create_new_account">Create new account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -11,34 +11,37 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.nana.R;
-import com.example.nana.core.BaseActivity;
-import com.example.nana.models.UserModel;
 import com.example.nana.databinding.ActivityLoginBinding;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.nana.utilites.Constants;
+import com.example.nana.utilites.PreferenceManager;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Objects;
+import java.util.HashMap;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends AppCompatActivity {
 
     public ActivityLoginBinding binding;
+    public PreferenceManager preferenceManager;
+    FirebaseFirestore database = FirebaseFirestore.getInstance();
 
     private EditText username, email, password;
-    private TextView loginTitle, changeTypeOfAuth, registerTypes;
+    private TextView loginTitle, changeTypeOfAuth;
     private Button buttonLogin;
     private ImageButton buttonShowHide;
-    public ImageView google, facebook, twitter;
 
     private boolean isSigningUp = true, isPasswordVisible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        preferenceManager = new PreferenceManager(getApplicationContext());
         checkEntered();
 
         init();
@@ -55,42 +58,50 @@ public class LoginActivity extends BaseActivity {
 
         loginTitle = binding.textLoginTitle;
         changeTypeOfAuth = binding.textChangeTypeOfAuth;
-        registerTypes = binding.textRegisterTypes;
 
         buttonLogin = binding.btnLogin;
         buttonShowHide = binding.buttonShowHide;
-
-        google = binding.google;
-        facebook = binding.facebook;
-        twitter = binding.twitter;
     }
 
     private void initListeners() {
         buttonLogin.setOnClickListener(v -> {
             if (isSigningUp) {
+                loading(true, isSigningUp);
                 if (username.getText().toString().isEmpty()) {
-                    username.setError("А как же имя пользователя? Его стоит ввести!");
+                    username.setError("Обязательное для заполнения поле!");
+                    loading(false, isSigningUp);
                 } else if (username.getText().length() < 4 || username.getText().length() > 12) {
                     username.setError("Имя пользователя должно содержать от 4 до 12 символов");
+                    loading(false, isSigningUp);
                 } else if (email.getText().toString().isEmpty()) {
-                    email.setError("Ой-Ой! Похоже Email обязательно нужно ввести!");
+                    email.setError("Обязательное для заполнения поле!");
+                    loading(false, isSigningUp);
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
                     email.setError("Проверьте правильность написания Email!");
+                    loading(false, isSigningUp);
                 } else if (password.getText().toString().isEmpty()) {
-                    password.setError("Если хотите остаться без аккаунта, то пароль можно и не вводить");
+                    password.setError("Обязательное для заполнения поле!");
                     buttonShowHide.setVisibility(View.GONE);
+                    loading(false, isSigningUp);
                 } else if (password.getText().length() < 6 || password.getText().length() > 15) {
                     password.setError("Пароль должен содержать от 6 до 15 символов");
                     buttonShowHide.setVisibility(View.GONE);
+                    loading(false, isSigningUp);
                 } else {
-                    handleRegister();
+                    handleSignUp();
                 }
             } else {
+                loading(true, isSigningUp);
                 if (email.getText().toString().isEmpty()) {
-                    email.setError("Ой-Ой! Похоже электронную почту обязательно нужно ввести!");
+                    email.setError("Обязательное для заполнения поле!");
+                    loading(false, isSigningUp);
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
+                    email.setError("Проверьте правильность написания Email!");
+                    loading(false, isSigningUp);
                 } else if (password.getText().toString().isEmpty()) {
-                    password.setError("Эй! А пароль? Без пароля не впущу!");
-                } else { handleLogin(); }
+                    password.setError("Обязательное для заполнения поле!");
+                    loading(false, isSigningUp);
+                } else { handleSignIn(); }
             }
         });
 
@@ -103,7 +114,6 @@ public class LoginActivity extends BaseActivity {
                 loginTitle.setText(R.string.login);
                 buttonLogin.setText(R.string.login);
                 changeTypeOfAuth.setText(R.string.do_not_have_an_account);
-                registerTypes.setText(R.string.or_login_with);
             } else {
                 isSigningUp = true;
 
@@ -112,7 +122,6 @@ public class LoginActivity extends BaseActivity {
                 loginTitle.setText(R.string.registration);
                 buttonLogin.setText(R.string.register);
                 changeTypeOfAuth.setText(R.string.already_have_an_account);
-                registerTypes.setText(R.string.or_register_with);
             }
         });
 
@@ -146,36 +155,67 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
-    private void handleRegister() {
-        FirebaseAuth.getInstance()
-                .createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
-                .addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                FirebaseDatabase.getInstance().getReference("user/" + Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(new UserModel(username.getText().toString(), email.getText().toString(), ""));
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            } else {
-                Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+    private void handleSignUp() {
+        HashMap<String, Object> user = new HashMap<>();
+        user.put(Constants.KEY_NAME, binding.editUsername.getText().toString());
+        user.put(Constants.KEY_EMAIL, binding.editEmail.getText().toString());
+        user.put(Constants.KEY_PASSWORD, binding.editPassword.getText().toString());
+        database.collection(Constants.KEY_COLLECTION_USERS)
+            .add(user)
+            .addOnSuccessListener(documentReference -> {
+                preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
+                preferenceManager.putString(Constants.KEY_NAME, binding.editUsername.getText().toString());
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            })
+            .addOnFailureListener(exception -> Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_LONG).show());
     }
 
-    private void handleLogin() {
-        FirebaseAuth.getInstance()
-                .signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+    private void handleSignIn() {
+        loading(true, isSigningUp);
+        database.collection(Constants.KEY_COLLECTION_USERS)
+                .whereEqualTo(Constants.KEY_EMAIL, binding.editEmail.getText().toString())
+                .whereEqualTo(Constants.KEY_PASSWORD, binding.editPassword.getText().toString())
+                .get()
                 .addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                Toast.makeText(LoginActivity.this, "Вход прошёл успешно!", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+                    if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0) {
+                        DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+                        preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                        preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
+                        preferenceManager.putString(Constants.KEY_NAME, documentSnapshot.getString(Constants.KEY_NAME));
+                        preferenceManager.putString(Constants.KEY_IMAGE, documentSnapshot.getString(Constants.KEY_IMAGE));
+
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    } else {
+                        loading(false, isSigningUp);
+                        password.setError("Неправильный пароль!");
+                    }
+                });
     }
 
     public void checkEntered() {
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
+        }
+    }
+
+    public void loading(Boolean isLoading, Boolean isSignUp) {
+        if (isLoading) {
+            binding.btnLogin.setText("");
+            binding.progressBar.setVisibility(View.VISIBLE);
+        } else {
+            if (isSignUp) {
+                binding.btnLogin.setText(R.string.registration);
+            } else {
+                binding.btnLogin.setText(R.string.login);
+            }
+            binding.progressBar.setVisibility(View.GONE);
         }
     }
 }

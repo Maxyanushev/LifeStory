@@ -2,13 +2,11 @@ package com.example.nana.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,16 +33,10 @@ import com.example.nana.fragments.navigation.drawer.profile.ProfileFragment;
 import com.example.nana.fragments.navigation.drawer.replenishment.ReplenishmentFragment;
 import com.example.nana.fragments.navigation.drawer.settings.SettingsFragment;
 import com.example.nana.fragments.navigation.drawer.support.SupportFragment;
-import com.example.nana.models.UserModel;
+import com.example.nana.utilites.Constants;
+import com.example.nana.utilites.PreferenceManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.Objects;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -58,13 +50,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     public View navHeader;
 
-    public SharedPreferences.Editor editor;
-    public SharedPreferences wmbPreference;
-
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private Switch onlineStatus;
-    private TextView onlineStatusText, usernameText;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,19 +58,15 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         initListeners();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        replaceFragment(new FeedFragment());
-    }
-
     public void init() {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
 
         drawer = binding.drawerLayout;
         navigationView = binding.navView;
         navigationView.setNavigationItemSelectedListener(MainActivity.this);
+        navigationView.setBackgroundColor(Color.argb(255, 20,34, 50));
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_profile, R.id.nav_history, R.id.nav_news,
                 R.id.nav_replenishment, R.id.nav_support, R.id.nav_instruction,
@@ -93,36 +74,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         navHeader = navigationView.getHeaderView(0);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        onlineStatus = navHeader.findViewById(R.id.online_status);
-        onlineStatusText = navHeader.findViewById(R.id.online_status_text);
 
+        TextView usernameText = navHeader.findViewById(R.id.name_text);
         // put the username in the sidebar name field
-        usernameText = navHeader.findViewById(R.id.name_text);
-        FirebaseDatabase.getInstance().getReference("user/" + FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        usernameText.setText(Objects.requireNonNull(snapshot.getValue(UserModel.class)).getUsername());
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+        usernameText.setText(preferenceManager.getString(Constants.KEY_NAME));
 
         replaceFragment(new FeedFragment());
-        bottomNavigationView.setBackground(null);
     }
 
     @SuppressLint("NonConstantResourceId")
     public void initListeners() {
-        onlineStatus.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                onlineStatusText.setText(R.string.online_status_on);
-            } else {
-                onlineStatusText.setText(R.string.online_status_off);
-            }
-        });
 
         binding.appBarMain.imageButton3.setOnClickListener(v -> drawer.openDrawer(GravityCompat.START));
         binding.appBarMain.imageButton.setOnClickListener(v -> {
@@ -141,7 +102,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     break;
 
                 case R.id.add:
-                    newDetailPost();
+                    replaceActivity(PublicationActivity.class);
                     break;
 
                 case R.id.notification:
@@ -156,18 +117,18 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         });
     }
 
-    private void newDetailPost() {
-        wmbPreference = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
-        if (isFirstRun) {
-            replaceActivity(DetailPublicationActivity.class);
-        } else {
-            replaceActivity(PublicationActivity.class);
-        }
-        editor = wmbPreference.edit();
-        editor.putBoolean("FIRSTRUN", false);
-        editor.apply();
-    }
+//    private void newDetailPost() {
+//        wmbPreference = PreferenceManager.getDefaultSharedPreferences(this);
+//        boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
+//        if (isFirstRun) {
+//            replaceActivity(DetailPublicationActivity.class);
+//        } else {
+//            replaceActivity(PublicationActivity.class);
+//        }
+//        editor = wmbPreference.edit();
+//        editor.putBoolean("FIRSTRUN", false);
+//        editor.apply();
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

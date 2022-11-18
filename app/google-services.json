@@ -8,36 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:361312574202:android:87adae254dd8d3fdd60743",
-        "android_client_info": {
-          "package_name": "com.example.chatapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "361312574202-abph8s27dqkjll814jl5pdqb8f53t2md.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCMaWjp-4gNoKxPkQoD-pXZBLR5KqG-zxI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "361312574202-abph8s27dqkjll814jl5pdqb8f53t2md.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:361312574202:android:c888a964ea7ca21fd60743",
+        "mobilesdk_app_id": "1:361312574202:android:dd5c5f87fe2d4d84d60743",
         "android_client_info": {
           "package_name": "com.example.nana"
         }

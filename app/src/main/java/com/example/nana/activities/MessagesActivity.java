@@ -1,45 +1,60 @@
 package com.example.nana.activities;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.nana.R;
+import androidx.annotation.NonNull;
+
 import com.example.nana.adapters.MessagesAdapter;
 import com.example.nana.core.BaseActivity;
 import com.example.nana.databinding.ActivityMessagesBinding;
 import com.example.nana.models.MessageModel;
 import com.example.nana.models.UserModel;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.example.nana.network.ApiClient;
+import com.example.nana.network.ApiService;
+import com.example.nana.utilites.Constants;
+import com.example.nana.utilites.PreferenceManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MessagesActivity extends BaseActivity {
 
-    public ActivityMessagesBinding binding;
-    private MessagesAdapter massageAdapter;
+    private ActivityMessagesBinding binding;
+    private UserModel receiverUser;
+    private List<MessageModel> messageModels;
+    private MessagesAdapter messagesAdapter;
+    private PreferenceManager preferenceManager;
+    private FirebaseFirestore database;
 
-    private RecyclerView recyclerView;
-    private EditText editMassageInput;
-    public TextView txtMassageWith;
-    public ImageView imgToolbar, imgSend;
-
-    private final ArrayList<MessageModel> messages = new ArrayList<>();
-
-    private String usernameOfTheRoommate, emailOfRoommate, chatRoomId;
+    private String conversionId = null;
+    private Boolean isReceiverAvailable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,73 +68,233 @@ public class MessagesActivity extends BaseActivity {
         binding = ActivityMessagesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        usernameOfTheRoommate = getIntent().getStringExtra("username_of_roommate");
-        emailOfRoommate = getIntent().getStringExtra("email_of_roommate");
+        preferenceManager = new PreferenceManager(getApplicationContext());
+        messageModels = new ArrayList<>();
+        messagesAdapter = new MessagesAdapter(
+                messageModels,
+                preferenceManager.getString(Constants.KEY_USER_ID)
+        );
+        binding.chatRecyclerView.setAdapter(messagesAdapter);
+        database = FirebaseFirestore.getInstance();
 
-        recyclerView = binding.recyclerMessages;
-        imgSend = binding.imgSend;
-        editMassageInput = binding.editMessage;
-        txtMassageWith = binding.txtChattingWith;
-        imgToolbar = binding.imgToolbar;
-
-        txtMassageWith.setText(usernameOfTheRoommate);
-
-        massageAdapter = new MessagesAdapter(messages, getIntent().getStringExtra("my_img"), getIntent().getStringExtra("img_of_roommate"), MessagesActivity.this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(massageAdapter);
-        Glide.with(MessagesActivity.this).load(getIntent().getStringExtra("img_of_roommate")).placeholder(R.drawable.test_img).error(R.drawable.test_img).into(imgToolbar);
-
-        setUpChatRoom();
+        loadReceiverDetails();
+        listenMessages();
     }
 
     public void initListeners() {
-        imgSend.setOnClickListener(v -> {
-            FirebaseDatabase.getInstance().getReference("messages/" + chatRoomId).push().setValue(new MessageModel(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail(), emailOfRoommate, editMassageInput.getText().toString()));
-            editMassageInput.setText("");
-        });
+        binding.imageChatBack.setOnClickListener(v -> onBackPressed());
+        binding.layoutSend.setOnClickListener(v -> sendMessage());
     }
 
-    public void setUpChatRoom() {
-        FirebaseDatabase.getInstance().getReference("user/" + FirebaseAuth.getInstance().getUid())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String myUserName = Objects.requireNonNull(snapshot.getValue(UserModel.class)).getUsername();
-                        if (usernameOfTheRoommate.compareTo(myUserName) > 0) {
-                            chatRoomId = myUserName + usernameOfTheRoommate;
-                        } else if (usernameOfTheRoommate.compareTo(myUserName) == 0) {
-                            chatRoomId = myUserName + usernameOfTheRoommate;
-                        } else {
-                            chatRoomId = usernameOfTheRoommate + myUserName;
+    private void sendMessage() {
+        HashMap<String, Object> message = new HashMap<>();
+        message.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
+        message.put(Constants.KEY_RECEIVER_ID, receiverUser.id);
+        message.put(Constants.KEY_MESSAGE, binding.editMessage.getText().toString());
+        message.put(Constants.KEY_TIMESTAMP, new Date());
+        database.collection(Constants.KEY_COLLECTION_CHAT).add(message);
+        if (conversionId != null) {
+            updateConversion(binding.editMessage.getText().toString());
+        } else {
+            HashMap<String, Object> conversion = new HashMap<>();
+            conversion.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
+            conversion.put(Constants.KEY_SENDER_NAME, preferenceManager.getString(Constants.KEY_NAME));
+            conversion.put(Constants.KEY_SENDER_IMAGE, preferenceManager.getString(Constants.KEY_IMAGE));
+            conversion.put(Constants.KEY_RECEIVER_ID, receiverUser.id);
+            conversion.put(Constants.KEY_RECEIVER_NAME, receiverUser.username);
+            conversion.put(Constants.KEY_RECEIVER_IMAGE, receiverUser.image);
+            conversion.put(Constants.KEY_LAST_MESSAGE, binding.editMessage.getText().toString());
+            conversion.put(Constants.KEY_TIMESTAMP, new Date());
+            addConversion(conversion);
+        }
+        if (!isReceiverAvailable) {
+            try {
+                JSONArray tokens = new JSONArray();
+                tokens.put(receiverUser.token);
+
+                JSONObject data = new JSONObject();
+                data.put(Constants.KEY_USER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
+                data.put(Constants.KEY_NAME, preferenceManager.getString(Constants.KEY_NAME));
+                data.put(Constants.KEY_FCM_TOKEN, preferenceManager.getString(Constants.KEY_FCM_TOKEN));
+                data.put(Constants.KEY_MESSAGE, preferenceManager.getString(Constants.KEY_MESSAGE));
+
+                JSONObject body = new JSONObject();
+                body.put(Constants.REMOTE_MSG_DATA, data);
+                body.put(Constants.REMOTE_MSG_REGISTRATION_IDS, tokens);
+
+                sendNotification(body.toString());
+            } catch (Exception exception) {
+                Toast.makeText(getApplicationContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+        binding.editMessage.setText(null);
+    }
+
+    private void sendNotification(String messageBody) {
+        ApiClient.getClient().create(ApiService.class).sendMessage(
+                Constants.getRemoteMsgHeaders(),
+                messageBody
+        ).enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        if (response.body() != null) {
+                            JSONObject responseJson = new JSONObject(response.body());
+                            JSONArray results = responseJson.getJSONArray("results");
+                            if (responseJson.getInt("failure") == 1) {
+                                JSONObject error = (JSONObject) results.get(0);
+                                Toast.makeText(getApplicationContext(), error.getString("error"), Toast.LENGTH_SHORT).show();
+                                return;
+                            }
                         }
-                        attachMassageListener(chatRoomId);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-    }
-
-    private void attachMassageListener(String chatRoomId) {
-        FirebaseDatabase.getInstance().getReference("messages/" + chatRoomId).addValueEventListener(new ValueEventListener() {
-            @SuppressLint("NotifyDataSetChanged")
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                messages.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    messages.add(dataSnapshot.getValue(MessageModel.class));
+                    Toast.makeText(getApplicationContext(), "Notification send successful!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error: " + response.code(), Toast.LENGTH_SHORT).show();
                 }
-                massageAdapter.notifyDataSetChanged();
-                recyclerView.scrollToPosition(messages.size() - 1);
-                recyclerView.setVisibility(View.VISIBLE);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void listenAvailabilityOfReceiver() {
+        database.collection(Constants.KEY_COLLECTION_USERS).document(
+                receiverUser.id
+        ).addSnapshotListener(MessagesActivity.this, (value, error) -> {
+            if (error != null) {
+                return;
+            }
+
+            if (value != null) {
+                if (value.getLong(Constants.KEY_AVAILABILITY) != null) {
+                    int availability = Objects.requireNonNull(value.getLong(Constants.KEY_AVAILABILITY)).intValue();
+                    isReceiverAvailable = availability == 1;
+                }
+                receiverUser.token = value.getString(Constants.KEY_FCM_TOKEN);
+            }
+
+            if (isReceiverAvailable) {
+                binding.textAvailability.setVisibility(View.VISIBLE);
+            } else {
+                binding.textAvailability.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private void loadReceiverDetails() {
+        receiverUser = (UserModel) getIntent().getSerializableExtra(Constants.KEY_USER);
+        binding.textNameCompanion.setText(receiverUser.username);
+    }
+
+    private Bitmap getBitmapFromEncodedString(String encodedImage) {
+        byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private final EventListener<QuerySnapshot> eventListener = (value, error) -> {
+        if (error != null) {
+            return;
+        }
+        if (value != null) {
+            int count = messageModels.size();
+            for (DocumentChange documentChange : value.getDocumentChanges()) {
+                if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                    MessageModel messageModel = new MessageModel();
+                    messageModel.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
+                    messageModel.receiverId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
+                    messageModel.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
+                    messageModel.dateTime = getReadableDataTime(documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP));
+                    messageModel.dateObject = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);
+                    messageModels.add(messageModel);
+                }
+            }
+            Collections.sort(messageModels, (obj1, obj2) -> obj1.dateObject.compareTo(obj2.dateObject));
+            if (count == 0) {
+                messagesAdapter.notifyDataSetChanged();
+            } else {
+                messagesAdapter.notifyItemRangeInserted(messageModels.size(), messageModels.size());
+                binding.chatRecyclerView.smoothScrollToPosition(messageModels.size() - 1);
+            }
+            binding.chatRecyclerView.setVisibility(View.VISIBLE);
+        }
+        binding.progressBar.setVisibility(View.GONE);
+        if (conversionId == null) {
+            checkForConversion();
+        }
+    };
+
+    private void listenMessages() {
+        database.collection(Constants.KEY_COLLECTION_CHAT)
+                .whereEqualTo(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
+                .whereEqualTo(Constants.KEY_RECEIVER_ID, receiverUser.id)
+                .addSnapshotListener(eventListener);
+
+        database.collection(Constants.KEY_COLLECTION_CHAT)
+                .whereEqualTo(Constants.KEY_SENDER_ID, receiverUser.id)
+                .whereEqualTo(Constants.KEY_RECEIVER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
+                .addSnapshotListener(eventListener);
+    }
+
+    private String getReadableDataTime(Date date) {
+//        return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.getDefault()).format(date);
+        return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.ENGLISH).format(date);
+    }
+
+    private void addConversion(HashMap<String, Object> conversion) {
+        database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
+                .add(conversion)
+                .addOnSuccessListener(documentReference -> conversionId = documentReference.getId());
+    }
+
+    private void updateConversion(String message) {
+        DocumentReference documentReference =
+                database.collection(Constants.KEY_COLLECTION_CONVERSATIONS).document(conversionId);
+        documentReference.update(
+                Constants.KEY_LAST_MESSAGE, message,
+                Constants.KEY_TIMESTAMP, new Date()
+        );
+    }
+
+    private void checkForConversion() {
+        if (messageModels.size() != 0) {
+            checkForConversionRemotely(
+                    preferenceManager.getString(Constants.KEY_USER_ID),
+                    receiverUser.id
+            );
+
+            checkForConversionRemotely(
+                    receiverUser.id,
+                    preferenceManager.getString(Constants.KEY_USER_ID)
+            );
+        }
+    }
+
+    private void checkForConversionRemotely(String senderId, String receiverId) {
+        database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
+                .whereEqualTo(Constants.KEY_SENDER_ID, senderId)
+                .whereEqualTo(Constants.KEY_RECEIVER_ID, receiverId)
+                .get()
+                .addOnCompleteListener(conversionOnCompleteListener);
+    }
+
+    private final OnCompleteListener<QuerySnapshot> conversionOnCompleteListener = task -> {
+        if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0) {
+            DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+            conversionId = documentSnapshot.getId();
+        }
+    };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listenAvailabilityOfReceiver();
     }
 }

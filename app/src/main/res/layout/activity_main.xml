@@ -32,6 +32,7 @@
             android:layout_marginTop="10dp"
             android:gravity="start"
             android:padding="15dp"
+            android:background="@color/transparent"
             android:text="@string/version_draw_menu"
             android:textColor="#777777"
             android:textSize="13sp"

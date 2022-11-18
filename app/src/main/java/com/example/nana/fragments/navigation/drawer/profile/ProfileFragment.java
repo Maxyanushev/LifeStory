@@ -1,11 +1,13 @@
 package com.example.nana.fragments.navigation.drawer.profile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,10 +20,18 @@ import com.example.nana.core.BaseFragment;
 import com.example.nana.databinding.FragmentProfileBinding;
 import com.example.nana.fragments.navigation.drawer.profile.fragments.PostsFragment;
 import com.example.nana.fragments.navigation.drawer.profile.fragments.SavesFragment;
+import com.example.nana.utilites.Constants;
+import com.example.nana.utilites.PreferenceManager;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 
 public class ProfileFragment extends BaseFragment {
+
+    PreferenceManager preferenceManager;
 
     private FragmentProfileBinding binding;
     public ProfileViewModel profileViewModel;
@@ -36,6 +46,12 @@ public class ProfileFragment extends BaseFragment {
     }
 
     public ProfileFragment() {}
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        preferenceManager = new PreferenceManager(context);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
@@ -62,9 +78,19 @@ public class ProfileFragment extends BaseFragment {
 
         binding.backButton.setOnClickListener(v -> requireActivity().onBackPressed());
         binding.buttonExit.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(requireActivity(), LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP));
-            requireActivity().finish();
+            FirebaseFirestore database = FirebaseFirestore.getInstance();
+            DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
+                    .document(preferenceManager.getString(Constants.KEY_USER_ID));
+            HashMap<String, Object> updates = new HashMap<>();
+            updates.put(Constants.KEY_FCM_TOKEN, FieldValue.delete());
+            documentReference.update(updates).addOnSuccessListener(unused -> {
+                preferenceManager.clear();
+                startActivity(new Intent(requireActivity().getApplicationContext(), LoginActivity.class));
+            }).addOnFailureListener(e -> Toast.makeText(requireActivity().getApplicationContext(), "Не получаеться!", Toast.LENGTH_SHORT));
+        });
+
+        binding.layoutEditProfile.setOnClickListener(v -> {
+
         });
 
         return root;

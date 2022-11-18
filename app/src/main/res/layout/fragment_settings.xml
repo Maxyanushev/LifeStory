@@ -31,7 +31,6 @@
 
                     <TextView
                         android:id="@+id/txtNext"
-                        style="@style/Widget.Nana.TextView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/frame_blue"
@@ -46,7 +45,6 @@
 
                 <ImageButton
                     android:id="@+id/imageButton6"
-                    style="@style/Widget.Nana.ImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -59,7 +57,6 @@
 
                 <TextView
                     android:id="@+id/textView15"
-                    style="@style/Widget.Nana.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -107,7 +104,6 @@
 
                             <TextView
                                 android:id="@+id/textView33"
-                                style="@style/Widget.Nana.TextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
@@ -142,7 +138,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton9"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
@@ -154,7 +149,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton7"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
@@ -167,7 +161,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView8"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
@@ -178,7 +171,6 @@
 
                                 <TextView
                                     android:id="@+id/textView18"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -190,7 +182,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton8"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@color/transparent"
@@ -202,7 +193,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView7"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -214,7 +204,6 @@
 
                                 <TextView
                                     android:id="@+id/textView16"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -226,7 +215,6 @@
 
                                 <TextView
                                     android:id="@+id/textView19"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -238,7 +226,6 @@
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.cardview.widget.CardView>
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -271,7 +258,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton12"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@color/transparent"
@@ -283,7 +269,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton100"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
@@ -295,7 +280,6 @@
 
                                 <TextView
                                     android:id="@+id/textView20"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -318,7 +302,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView999"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
@@ -329,7 +312,6 @@
 
                                 <TextView
                                     android:id="@+id/textView10"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -341,7 +323,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton1"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@color/transparent"
@@ -353,7 +334,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView1"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -365,7 +345,6 @@
 
                                 <TextView
                                     android:id="@+id/textView17"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -377,7 +356,6 @@
 
                                 <TextView
                                     android:id="@+id/textView30"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -389,7 +367,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton11"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
@@ -402,7 +379,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView9"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
@@ -425,7 +401,6 @@
 
                             <TextView
                                 android:id="@+id/textView99"
-                                style="@style/Widget.Nana.TextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
@@ -488,7 +463,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton13"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
@@ -501,7 +475,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView11"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
@@ -512,7 +485,6 @@
 
                                 <TextView
                                     android:id="@+id/textView21"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -523,7 +495,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView10"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -535,7 +506,6 @@
 
                                 <TextView
                                     android:id="@+id/textView22"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -558,7 +528,6 @@
 
                             <TextView
                                 android:id="@+id/textView999"
-                                style="@style/Widget.Nana.TextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
@@ -607,7 +576,6 @@
 
                                 <ImageButton
                                     android:id="@+id/imageButton14"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="16dp"
@@ -620,7 +588,6 @@
 
                                 <TextView
                                     android:id="@+id/textView23"
-                                    style="@style/Widget.Nana.TextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -631,7 +598,6 @@
 
                                 <ImageView
                                     android:id="@+id/imageView12"
-                                    style="@style/Widget.Nana.ImageView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -655,7 +621,6 @@
 
                             <TextView
                                 android:id="@+id/textView9999"
-                                style="@style/Widget.Nana.TextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"

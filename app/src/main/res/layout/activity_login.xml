@@ -90,29 +90,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35">
 
-        <FrameLayout
-            android:id="@+id/layoutImageProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+<!--        <FrameLayout-->
+<!--            android:id="@+id/layoutImageProfile"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center">-->
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/imageProfile"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:background="@drawable/background_image"
-                android:scaleType="centerCrop"
-                app:riv_oval="true" />
+<!--            <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                android:id="@+id/imageProfile"-->
+<!--                android:layout_width="110dp"-->
+<!--                android:layout_height="110dp"-->
+<!--                android:background="@drawable/background_image"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                app:riv_oval="true" />-->
 
-            <TextView
-                android:id="@+id/textAddImageProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Add Image"
-                android:textColor="@color/primary_text"
-                android:textSize="15sp" />
-        </FrameLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/textAddImageProfile"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Add Image"-->
+<!--                android:textColor="@color/primary_text"-->
+<!--                android:textSize="15sp" />-->
+<!--        </FrameLayout>-->
 
         <EditText
             android:id="@+id/editUsername"
